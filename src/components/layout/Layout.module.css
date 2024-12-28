@@ -1,0 +1,120 @@
+.container {
+  margin: auto;
+  max-width: 1440px;
+}
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 0;
+  text-align: center;
+  margin: 0 126px;
+}
+
+.signup span {
+  display: flex;
+  align-items: center;
+  border: 2px solid #28a745;
+  border-radius: 8px;
+  padding: 8px;
+  color: #28a745;
+  font-family: Vazir FD-WOL;
+  font-size: 18px;
+  font-weight: 500;
+}
+.logoandlist {
+  display: flex;
+}
+.logoandlist ul {
+  display: flex;
+  margin-top: 10px;
+  margin-right: 30px;
+  justify-content: space-between;
+}
+
+.logoandlist li {
+  padding: 0 25px;
+  font-size: 18px;
+  color: #282828;
+  cursor: pointer;
+  font-family: Yekan Bakh;
+  font-size: 16px;
+  font-weight: 400;
+}
+
+.logoandlist img {
+  width: 146px;
+}
+
+.container {
+  min-height: 1000px;
+}
+
+.footer {
+  display: flex;
+  justify-content: space-between;
+  height: 290px;
+  border-top: 1px solid #00000033;
+  margin: 0 126px;
+}
+
+.leftfooter {
+  margin-top: 20px;
+  padding: 10px 0;
+  align-items: start;
+  text-align: left;
+}
+.footerlogo {
+  text-align: left;
+}
+.leftfooter p {
+  padding-top: 30px;
+  font-size: 15px;
+  color: #000000;
+  font-family: Vazir FD-WOL;
+}
+
+.icon {
+  display: flex;
+  flex-direction: row;
+  margin-top: 40px;
+  gap: 25px;
+}
+
+.rightfooter {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 40px;
+  text-align: right;
+}
+.rightfooter h3 {
+  font-family: Yekan Bakh;
+  font-size: 24px;
+  font-weight: 600;
+  color: #282828;
+}
+.rightfooter li {
+  margin-top: 20px;
+
+}
+
+.rightside li {
+  text-align: right;
+  font-family: Yekan Bakh;
+  font-size: 18px;
+  font-weight: 400;
+  color: #282828;
+}
+.leftside {
+  margin-right: 100px;
+}
+.copyright {
+  box-shadow: 0px 1px 4px 0px #00000029;
+  height: 74px;
+  text-align: center;
+  padding-top: 20px;
+  font-family: Yekan Bakh;
+  font-size: 16px;
+  font-weight: 400;
+  color: #00000080;
+}

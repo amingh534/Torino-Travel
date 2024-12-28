@@ -1,0 +1,40 @@
+.line {
+  width: 100%;
+  border-top: 1px solid #00000033;
+}
+
+.container {
+  display: flex;
+  margin-left: 153px;
+  margin-right: 153px;
+  justify-content: baseline;
+  margin-top: 20px;
+}
+
+.container img {
+  display: flex;
+  align-items: baseline;
+  margin-top: auto;
+  margin-left: 20px;
+}
+
+.container div {
+  display: block;
+  justify-content: baseline;
+  margin-top: auto;
+  margin-left: 40px;
+}
+.container h2 {
+  margin-bottom: 10px;
+  font-family: Vazir FD-WOL;
+  font-size: 26px;
+  font-weight: 500;
+  line-height: 40.63px;
+  color: #282828;
+}
+.container p {
+  text-align: justify;
+  font-family: Vazir FD-WOL;
+  font-size: 16px;
+  font-weight: 300;
+}

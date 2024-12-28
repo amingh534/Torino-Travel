@@ -1,0 +1,31 @@
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 100px;
+}
+
+.right {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    font-size: 36px;
+    font-weight: 600;
+    
+}
+.left {
+    margin-right: 70px;
+    display: flex;
+    
+}
+
+.link {
+    border: none;
+    border-radius: 16px;
+    margin-top: 50px;
+    font-size: 28px;
+    font-weight: 600;
+    padding: 20px;
+    color: #28A745;
+    background-color: #D8FFE1;
+}

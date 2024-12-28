@@ -1,0 +1,48 @@
+.container {
+    text-align: center;
+  }
+
+  .container h2 {
+    font-family: Yekan Bakh;
+    font-size: 28px;
+    font-weight: 600;
+    margin-top: 20px;
+    color: #595959;
+    font-size: 28px;
+  }
+  .container span {
+    color: #28a745;
+    margin-left: 5px;
+  }
+  .sperator {
+    width: 20px;
+    color: #00000033;
+  }
+  .selectoption {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    margin: 20px auto;
+    padding: 15px 18px 15px 10px;
+    border-radius: 20px;
+    border: 1px solid #00000026;
+    font-family: Yekan Bakh;
+    width: 874px;
+    height: 71px;
+    align-items: center;
+  }
+  
+  .selectoption select {
+    margin-left: auto;
+  }
+  
+  .selectoption button {
+    width: 190px;
+    height: 51px;
+    padding: 8px;
+    border-radius: 16px;
+    background-color: #28a745;
+    color: #ffffff;
+    font-size: 20px;
+  }
+  

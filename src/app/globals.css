@@ -1,0 +1,108 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: Yekan;
+  font-style: bold;
+  font-weight: 400;
+  font-display: fallback;
+  src: url("fonts/Yekan.ttf") format("truetype"),
+    url("fonts/YekanBakh-Bold.ttf") format("truetype")
+     
+}
+@font-face {
+  font-family: Yekan_Bakh;
+  font-style: light;
+  font-weight: 300;
+  font-display: fallback;
+  src: url("fonts/YekanBakh-Light.ttf") format("truetype"),
+}
+@font-face {
+  font-family: Yekan Bakh;
+  font-style: regular;
+  font-weight: 400;
+  font-display: fallback;
+  src: url("fonts/YekanBakh-Regular.ttf") format("truetype"),
+}
+@font-face {
+  font-family: Vazirmatn;
+  font-style: extra bold;
+  font-weight: 800;
+  font-display: fallback;
+  src: url("fonts/Vazirmatn-ExtraBold.ttf") format("truetype");
+}
+@font-face {
+  font-family: Vazirmatn;
+  font-style: medium;
+  font-weight: 500;
+  font-display: fallback;
+  src: url("fonts/Vazirmatn-Medium.ttf") format("truetype");
+}
+@font-face {
+  font-family: Vazir FD-WOL;
+  font-style: medium;
+  font-weight: 500;
+  font-display: fallback;
+  src: url("fonts/Vazir-Medium-FD-WOL.ttf") format("truetype");
+}
+@font-face {
+  font-family: Vazir FD-WOL;
+  font-style: light;
+  font-weight: 300;
+  font-display: fallback;
+  src: url("fonts/Vazir-Light-FD-WOL.ttf") format("truetype");
+}
+@font-face {
+  font-family: Vazir FD-WOL;
+  font-style: regular;
+  font-weight: 400;
+  font-display: fallback;
+  src: url("fonts/Vazir-FD-WOL.ttf") format("truetype");
+}
+@font-face {
+  font-family: Vazir FD-WOL;
+  font-style: bold;
+  font-weight: 700;
+  font-display: fallback;
+  src: url("fonts/Vazir-Bold-FD-WOL.ttf") format("truetype");
+}
+@font-face {
+  font-family: A Iranian Sans;
+  font-style: regular;
+  font-weight: 400;
+  font-display: fallback;
+  src: url("fonts/IranianSansRegular.ttf") format("truetype");
+}
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  color: var(--foreground);
+  background: var(--background);
+  font-family: inherit;
+  box-shadow: 0px 1px 4px 0px #00000029;
+  height: 74px;
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}

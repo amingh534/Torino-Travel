@@ -8,9 +8,12 @@ const useSendOtp = () => {
 const useCheckOtp = () => {
   // const queryClient = useQueryClient();
   const mutationFn = (data) => api.post("auth/check-otp", data);
-  {}
+ 
   // const onSuccess =() => {
   //   queryClient.invalidateQueries({ queryKey: ["user-data"] });
+  // };
+  // const onSuccess =() => {
+  //   queryClient.cancelQueries({ queryKey: ["user-data"] })
   // };
   return useMutation({ mutationFn});
 };

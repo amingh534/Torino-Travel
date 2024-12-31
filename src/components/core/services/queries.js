@@ -10,6 +10,7 @@ const useGetUserData = () => {
   return useQuery({ queryFn, queryKey });
 };
 const useGetTours = (query) => {
+  console.log(query);
   const url = "tour?" + QueryString.stringify(query);
   const queryFn =  () => api.get(url);
   const queryKey = ["tour", query];

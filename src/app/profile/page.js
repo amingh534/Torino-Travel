@@ -43,7 +43,7 @@ function ProfilePage() {
   const updateUser = usePutUserData();
   // console.log("PutData:", updateUser);
   // console.log("ProfileData:", profiledata);
-  // console.log("User:", user);
+  console.log("User:", user);
   useEffect(() => {
     if (user) {
       setProfileData({
@@ -147,6 +147,9 @@ function ProfilePage() {
       <BankAccountForm
         showTransactions={showTransactions}
         setShowTransactions={setShowTransactions}
+        profiledata={profiledata}
+        setProfileData={setProfileData}
+        data={user}
       />
       {/* <div className="flex  border border-[#00000033] rounded-[10px] w-[872px] h-[171px] "></div> */}
       <Toaster />

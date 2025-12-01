@@ -3,7 +3,6 @@ import Calendar from "@/public/icons/Calendar";
 
 function PersonalInfoInputs({ profiledata, setProfileData }) {
   const handleChange = (e) => {
-    e.preventDefault();
     const { name, value } = e.target;
     if (name === "fullName") {
       const parts = value.trim().split(" ");
@@ -14,6 +13,7 @@ function PersonalInfoInputs({ profiledata, setProfileData }) {
         ...profiledata,
         firstName,
         lastName,
+        fullName: value,
       });
       return;
     }
@@ -46,7 +46,6 @@ function PersonalInfoInputs({ profiledata, setProfileData }) {
                 name={field.name}
                 value={profiledata[field.name] || ""}
                 onChange={handleChange}
-                
               >
                 {field.options.map((opt, idx) => (
                   <option key={idx} value={opt.value}>
@@ -56,7 +55,6 @@ function PersonalInfoInputs({ profiledata, setProfileData }) {
               </select>
             );
           }
-
           return (
             <input
               key={index}

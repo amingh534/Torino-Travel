@@ -5,33 +5,43 @@ import toast from "react-hot-toast";
 import { bankAccountSchema } from "src/components/core/schema";
 import { useUpdateBankAccount } from "src/components/core/services/mutation";
 
-function BankAccountForm({ showTransactions, setShowTransactions }) {
+function BankAccountForm({
+  showTransactions,
+  setShowTransactions,
+  data,
+  setProfileData,
+}) {
   const { mutate, isPending } = useUpdateBankAccount();
-
+//   const { shaba_code, accountIdentifier, debitCard_code } = data?.payment;
   const {
     register,
     handleSubmit,
     formState: { errors },
-  } = useForm({ resolver: yupResolver(bankAccountSchema) });
+  } = useForm({
+    resolver: yupResolver(bankAccountSchema),
+    defaultValues: {
+      shaba_code: data?.payment?.shaba_code,
+      accountIdentifier: data?.payment?.accountIdentifier,
+      debitCard_code: data?.payment?.debitCard_code,
+    },
+  });
 
   const submitHandler = (data) => {
     if (isPending) return;
     mutate(
       { payment: data },
       {
-        onSuccess: (data) => {
-          toast.success(data?.data?.message);
-          console.log(data);
+        onSuccess: ({ data }) => {
+          toast.success(data?.message);
+          setProfileData((prev) => ({ ...prev, payment: data.user.payment }));
           setShowTransactions(false);
         },
-        onError: (error) => {
-          toast.error(data?.data?.message);
+        onError: ({ response }) => {
+          toast.error(response?.data?.message || "دوباره وارد حساب کاربری شوید");
         },
       }
     );
   };
-
-  console.log(errors);
 
   return (
     <div className="grid border border-[#00000033] rounded-[10px] w-[872px] h-[179px] ">
@@ -118,11 +128,20 @@ function BankAccountForm({ showTransactions, setShowTransactions }) {
           </div>
           <div className="m-3 flex font-light">
             <div>
-              <p className="font-light">شماره شبا</p>
-              <p className="mt-4 font-light">شماره حساب</p>
+              <p className="font-light">
+                شماره شبا
+                {data?.payment?.shaba_code}
+              </p>
+              <p className="mt-4 font-light">
+                شماره حساب
+                {data?.payment?.accountIdentifier}
+              </p>
             </div>
             <div className="mx-auto">
-              <p className="font-light">شماره کارت</p>
+              <p className="font-light">
+                شماره کارت
+                {data?.payment?.debitCard_code}
+              </p>
             </div>
           </div>
         </div>

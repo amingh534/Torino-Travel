@@ -1,4 +1,4 @@
-import NotFoundPage from "@/src/components/template/NotFoundPage"
+import NotFoundPage from "@/template/NotFoundPage"
 
 function NotFound() {
   return (

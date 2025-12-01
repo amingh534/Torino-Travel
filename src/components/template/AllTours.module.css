@@ -1,0 +1,41 @@
+.wrapper{
+  margin-top: 145px;
+  padding-inline: 126px;
+  box-sizing: border-box;
+  
+}
+
+.grid{
+  display: grid;
+  grid-template-columns: repeat(4, minmax(20px, 1fr));
+  justify-items: center; /* centers inline-block children horizontally within each grid cell */
+  margin-top: 16px;
+  gap: 30px;
+}
+
+/* Make sure cards still look good on narrower screens */
+@media (max-width: 1200px){
+  .grid{
+    grid-template-columns: repeat(3, 1fr);
+
+  }
+}
+@media (max-width: 900px){
+  .grid{
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (max-width: 600px){
+  .wrapper {
+    padding-inline: 16px;
+  }
+  .grid{
+    grid-template-columns: 1fr;
+    gap: 10px;
+    justify-items: center;
+    
+  }
+  
+
+
+}

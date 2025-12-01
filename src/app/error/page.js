@@ -1,4 +1,4 @@
-import DisconnectPage from "@/src/components/template/DisconnectPage"
+import DisconnectPage from "@/template/DisconnectPage"
 
 function Disconnect() {
   return (

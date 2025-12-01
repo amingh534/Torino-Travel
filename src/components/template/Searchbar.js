@@ -16,10 +16,11 @@ function Searchbar() {
   const [query, setQuery] = useState("");
   const { data, isPending, refetch } = useGetTours(query);
   const { register, handleSubmit, control } = useForm();
+  const [isOpen, setIsOpen] = useState(false);
   //  console.log(data);
 
   useEffect(() => {
-    refetch()
+    refetch();
   }, [query]);
 
   const submitHandler = (form) => {
@@ -39,50 +40,71 @@ function Searchbar() {
 
   return (
     <form className={styles.container} onSubmit={handleSubmit(submitHandler)}>
-      <img src="/images/Untitled_design__1_ (1).png" />
+      <img src="/images/Untitled_design__1_ (1).webp" />
       <h2>
         <span>تورینو</span>برگزار کننده بهترین تور های داخلی و خارجی
       </h2>
-
       <div className={styles.selectoption}>
-        <button type="submit">جستجو</button>
-
-        <Controller
-          control={control}
-          name="date"
-          render={({ field: { onChange } }) => (
-            <DatePicker
-              accentColor="#28A745"
-              weekends={[6]}
-              className="font-['Vazir_FD-WOL'] size-3 "
-              // onChange={(value) => setCalendarValue(value)}
-              onChange={(e) => onChange({ startDate: DateToIso(e.from), endDate: DateToIso(e.from) })}
-              defaultValue={new Date()}
-              round="x2"
-              range
+        {/* انتخاب مبدا */}
+        <div className={styles.fieldGroup}>
+          <Location />
+          <select {...register("originId")}>
+            <option disabled selected>
+              مبدا
+            </option>
+            <option value="2">سنندج</option>
+          </select>
+        </div>
+        {/* انتخاب مقصد */}
+        <div className={styles.fieldGroup}>
+          <hr />
+          <Search />
+          <select {...register("destinationId")}>
+            <option disabled selected>
+              مقصد
+            </option>
+            <option value="1">تهران</option>
+          </select>
+        </div>
+        {/* انتخاب تاریخ */}
+        <div className={styles.fieldGroup}>
+          <hr />
+          <div
+            className={styles.iconLabel}
+            onClick={() => setIsOpen(!isOpen)}
+            style={{ cursor: "pointer" }}
+          >
+            <Calendar />
+            <label htmlFor="date">تاریخ</label>
+          </div>
+          {isOpen && (
+            <Controller
+              control={control}
+              name="date"
+              render={({ field: { onChange } }) => (
+                <div className={styles.datePickerWrapper}>
+                  <DatePicker
+                 
+                    accentColor="#28A745"
+                    inputClass="w-[200px] "
+                    weekends={[6]}
+                    className="font-['Vazir_FD-WOL'] size-3"
+                    onChange={(e) =>
+                      onChange({
+                        startDate: DateToIso(e.from),
+                        endDate: DateToIso(e.from),
+                      })
+                    }
+                    defaultValue={new Date()}
+                    round="x2"
+                    range
+                  />
+                </div>
+              )}
             />
           )}
-        />
-
-        <label>تاریخ</label>
-
-        <Calendar />
-        <select {...register("originId")}>
-          <option disabled selected>
-            مبدا
-          </option>
-
-          <option value="1">تهران</option>
-        </select>
-        <Search />
-        <select {...register("destinationId")}>
-          <option disabled selected>
-            مقصد
-          </option>
-          <option value="2">سنندج</option>
-        </select>
-
-        <Location />
+        </div>
+        <button type="submit">جستجو</button>
       </div>
     </form>
   );

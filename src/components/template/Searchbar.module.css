@@ -1,48 +1,113 @@
 .container {
-    text-align: center;
-  }
+  text-align: center;
+  margin: 0 auto;
+}
 
+
+.container h2 {
+  font-size: 28px;
+  font-weight: 600;
+  margin-top: 20px;
+  color: #595959;
+}
+.container span {
+  color: #28a745;
+  margin-left: 5px;
+}
+.selectoption {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  margin: 28px auto;
+  padding: 0px 18px 0px 10px;
+  border-radius: 20px;
+  border: 1px solid #00000026;
+  width: fit-content;
+  height: 71px;
+}
+.fieldGroup {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  position: relative;
+}
+.fieldGroup:nth-child(n + 2) {
+  margin-right: 126px;
+  gap: 8px;
+}
+.fieldGroup hr {
+  height: 56px;
+  border: 1px solid #00000033;
+}
+.selectoption button {
+  width: 190px;
+  height: 51px;
+  padding: 8px;
+  border: none;
+  cursor: pointer;
+  transition: 0.3s ease;
+  border-radius: 16px;
+  background-color: #28a745;
+  color: #ffffff;
+  font-size: 18px;
+}
+.selectoption button:hover {
+  background-color: #23903d;
+}
+.iconLabel {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 126px;
+  gap: 6px;
+}
+.datePickerWrapper {
+  position: absolute;
+  top: 60px;
+  z-index: 10;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+}
+@media (max-width: 900px) {
+}
+@media (max-width: 600px) {
   .container h2 {
-    font-family: Yekan Bakh;
-    font-size: 28px;
+    font-size: 18px;
     font-weight: 600;
-    margin-top: 20px;
-    color: #595959;
-    font-size: 28px;
-  }
-  .container span {
-    color: #28a745;
-    margin-left: 5px;
-  }
-  .sperator {
-    width: 20px;
-    color: #00000033;
   }
   .selectoption {
-    display: flex;
-    flex-direction: row-reverse;
-    justify-content: space-between;
-    margin: 20px auto;
-    padding: 15px 18px 15px 10px;
-    border-radius: 20px;
+    border: none;
+    color: #00000080;
+  }
+  .fieldGroup svg {
+    color: #00000080;
+    margin-right: 40px;
+  }
+  .fieldGroup:nth-child(n - 2) {
+    margin: 3px 0;
+    width: 160px;
+    height: 47px;
+    border-radius: 12px;
     border: 1px solid #00000026;
-    font-family: Yekan Bakh;
-    width: 874px;
-    height: 71px;
-    align-items: center;
   }
-  
-  .selectoption select {
-    margin-left: auto;
+  .fieldGroup:nth-child(3) {
+    width: 328px;
+    height: 47px;
+    border-radius: 12px;
+    border: 1px solid #00000026;
   }
-  
+  .iconLabel {
+    margin: 0 90px;
+  }
   .selectoption button {
-    width: 190px;
-    height: 51px;
-    padding: 8px;
+    width: 328px;
+    height: 47px;
     border-radius: 16px;
-    background-color: #28a745;
-    color: #ffffff;
-    font-size: 20px;
   }
-  
+  .fieldGroup hr {
+    display: none;
+  }
+}

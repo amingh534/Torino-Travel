@@ -1,24 +1,24 @@
 .container {
   display: flex;
   justify-content: space-between;
-  width: 1182px;
+  /* align-content: center; */
   height: 676px;
-  margin-left: 126px;
-  margin-right: auto;
+  padding-inline: 129px;
+  /* margin: 102px 129px auto 129px; */
   align-items: center;
 }
 .right {
   display: flex;
   flex-direction: column;
 }
-.right div {
+/* .right div {
   display: flex;
   flex-direction: row;
   align-items: baseline;
   font-family: Vazirmatn;
-  font-size: 40px;
   font-weight: 800;
-}
+  font-size: 40px;
+} */
 .right span {
   margin: auto 0;
   height: 40px;
@@ -43,10 +43,10 @@
   content: "تورینو";
   color: #28a745;
   padding: 0 10px;
+  font-weight: 800;
 }
 
 .right h3 {
-  font-family: Vazirmatn;
   font-size: 20px;
   font-weight: 500;
   text-align: right;
@@ -69,6 +69,13 @@
 .left {
   display: flex;
   justify-content: center;
+  position: relative;
+}
+.imgcontainer {
+  display: flex;
+  flex-direction: row;
+  margin: auto;
+  margin-bottom: 79px;
   position: relative;
 }
 .slide1 img {
@@ -95,10 +102,60 @@
   z-index: -3;
 }
 
-.imgcontainer {
-  display: flex;
-  flex-direction: row;
-  margin: auto;
-  position: relative;
-}
+@media (max-width: 600px) {
+  .container {
+    display: flex;
+    flex-direction: column;
+    padding-inline: 25px;
+    height: 386px;
+    /* margin: 90px 31px 62px 25px; */
+  }
+  .right div {
+    display: flex;
+    font-size: 24px;
+    margin-left:40px;
+  }
+  .right h3 {
+    display: none;
+  }
+  .right p {
+    display: none;
+  }
 
+  .left {
+    position: relative;
+    left: 0;
+    right: 0;
+  }
+  
+  .slide1 img {
+    position: absolute;
+    z-index: 1;
+    width: 255px;
+    height: 284px;
+    top: 16px;
+    left: 79px;
+    border-radius: 35px;
+  }
+  .slide2 img {
+    width: 253px;
+    height: 247px;
+    top: 35px;
+    left: 60px;
+    border-radius: 35px;
+  }
+  .slide3 img {
+    width: 168px;
+    height: 198px;
+    top: 69px;
+    left: 10px;
+    border-radius: 35px;
+  }
+  .slide4 img {
+    width: 142px;
+    height: 162px;
+    top: 97px;
+    left: -12px;
+    border-radius: 35px;
+  }
+}

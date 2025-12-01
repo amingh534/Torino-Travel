@@ -1,21 +1,9 @@
-import localFont from "next/font/local";
 import "./globals.css";
 import TanstackQueryProvider from "../components/partials/provider/TanstackQueryProvider";
 import { Toaster } from "react-hot-toast";
-import Header from "../components/template/Header";
-import Footer from "../components/template/Footer";
 import Layout from "../components/layout/Layout";
+import { yekanBakh } from "@/utils/fonts";
 
-const geistSans = localFont({
-  src: "./fonts/GeistVF.woff",
-  variable: "--font-geist-sans",
-  weight: "100 900",
-});
-const geistMono = localFont({
-  src: "./fonts/GeistMonoVF.woff",
-  variable: "--font-geist-mono",
-  weight: "100 900",
-});
 
 export const metadata = {
   title: "تورینو | خرید تخصصی تور های خارجی",
@@ -26,15 +14,15 @@ export default function RootLayout({ children }) {
   return (
     <html lang="fa" dir="rtl">
       <head>
-      <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"/>
+        <meta
+          name="viewport"
+          content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"
+        />
       </head>
-      <body
-        suppressHydrationWarning={true}
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
+      <body className={yekanBakh.className}  >
         <TanstackQueryProvider suppressHydrationWarning={true}>
-            <Toaster />
-            {children}
+          <Toaster />
+          <Layout>{children}</Layout>
         </TanstackQueryProvider>
       </body>
     </html>

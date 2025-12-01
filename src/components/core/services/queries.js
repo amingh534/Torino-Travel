@@ -1,4 +1,4 @@
-import { useQuery, useQueryClient } from "@tanstack/react-query";
+import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
 import api from "../config/api";
 import QueryString from "qs";
 
@@ -10,12 +10,26 @@ const useGetUserData = () => {
   return useQuery({ queryFn, queryKey });
 };
 const useGetTours = (query) => {
-  console.log(query);
+  // console.log("useGetTours:",query);
   const url = "tour?" + QueryString.stringify(query);
-  const queryFn =  () => api.get(url);
+  const queryFn = () => api.get(url);
   const queryKey = ["tour", query];
-  return (
-    useQuery({ queryFn, queryKey, enabled: false })
-  );
+  return useQuery({ queryFn, queryKey, enabled: false });
 };
-export { useGetUserData, useGetTours };
+
+const usePutUserData = () => {
+  const queryClient = useQueryClient();
+  // console.log("Query:",queryClient);
+
+  return useMutation({
+    mutationFn: (data) => api.put("user/profile", data),
+    onSuccess: () => {
+      queryClient.invalidateQueries({ queryKey: ["user-data"] });
+    },
+   
+  });
+};
+// const queryFn = () => api.put("user/profile");
+// const queryKey = ["put-user-data"];
+// return useQuery({ queryFn, queryKey });
+export { useGetUserData, useGetTours, usePutUserData };

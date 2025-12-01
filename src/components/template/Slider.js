@@ -23,16 +23,16 @@ function Slider() {
       <div className={styles.left}>
         <div className={styles.imgcontainer}>
           <div className={styles.slide1}>
-            <img src="images/slide1.png" />
+            <img src="images/slide1.webp" />
           </div>
           <div className={styles.slide2}>
-            <img src="images/slide2.png" />
+            <img src="images/slide2.webp" />
           </div>
           <div className={styles.slide3}>
-            <img src="images/slide3.png" />
+            <img src="images/slide3.webp" />
           </div>
           <div className={styles.slide4}>
-            <img src="images/slide4.png" />
+            <img src="images/slide4.webp" />
           </div>
         </div>
       </div>

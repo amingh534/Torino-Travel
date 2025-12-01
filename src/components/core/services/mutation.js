@@ -8,14 +8,14 @@ const useSendOtp = () => {
 const useCheckOtp = () => {
   // const queryClient = useQueryClient();
   const mutationFn = (data) => api.post("auth/check-otp", data);
- 
+
   // const onSuccess =() => {
   //   queryClient.invalidateQueries({ queryKey: ["user-data"] });
   // };
   // const onSuccess =() => {
   //   queryClient.cancelQueries({ queryKey: ["user-data"] })
   // };
-  return useMutation({ mutationFn});
+  return useMutation({ mutationFn });
 };
 // const useGetTours = () => {
 //   const mutationFn = (data) => api.get("tour", data);
@@ -40,6 +40,13 @@ const useCheckOtp = () => {
 //   };
 
 //   return useMutation({ mutationFn, onSuccess });
+// };
+
+// const usePutUserData = () => {
+//   const mutationFn = (data) => api.put("user/profile", data);
+//   return {
+//     mutationFn,
+//   };
 // };
 
 export { useSendOtp, useCheckOtp };

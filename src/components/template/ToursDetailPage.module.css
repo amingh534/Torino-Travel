@@ -1,0 +1,127 @@
+.container {
+  display: flex;
+  justify-content: center;
+  padding: 36px 0 99px 0;
+  background-color: #f3f3f3;
+}
+.card {
+  width: 1188px;
+  height: 427px;
+  border-radius: 10px;
+  border: 1px solid #00000033;
+  background-color: #ffff;
+  margin: 0 auto;
+}
+.card img {
+  border-radius: 12px;
+  width: 397px;
+  height: 265px;
+  padding: 29px 20px 0 0;
+}
+.innercard {
+  display: flex;
+}
+.carddetail {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-right: 24px;
+}
+.carddetail h1 {
+  font-weight: 600;
+  font-size: 32px;
+}
+.carddetail p {
+  font-weight: 400;
+  font-size: 20px;
+  margin-top: 16px;
+}
+.groupdetail {
+  display: flex;
+}
+.groupdetail div {
+  display: flex;
+  margin: 24px 0px 0 40px;
+  gap: 10px;
+  font-weight: 400;
+  font-size: 20px;
+  color: #7d7d7d;
+  word-spacing: 4px;
+}
+
+.buy {
+  display: flex;
+  margin-top: 32px;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.buy span {
+  font-weight: 400;
+  font-size: 28px;
+  text-align: right;
+  color: #009eca;
+}
+
+.buy span::after {
+  content: "تومان";
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 100%;
+  letter-spacing: 0%;
+  text-align: right;
+  color: #282828cc;
+}
+
+.buy button {
+  position: absolute;
+  width: 204px;
+  height: 56px;
+  border-radius: 10px;
+  left: 10%;
+  border: none;
+  background: #28a745;
+  font-weight: 300;
+  font-size: 24px;
+  color: #ffffff;
+}
+
+.cardoptions {
+ display: flex;
+  justify-content: space-evenly;
+  margin: 60px auto;
+ 
+ 
+}
+.cardoptions > div {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding: 15px 0;
+   align-items: start;
+}
+.cardoptions .top {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.cardoptions p {
+  font-weight: 400;
+  font-size: 18px;
+  color: #444;
+  margin: 0;
+}
+.cardoptions span {
+  font-weight: 500;
+  font-size: 16px;
+  color: #000;
+  display: block;
+}
+.cardoptions > div:not(:last-child) {
+  padding-left: 30px;
+  border-left: 1px solid #00000040;
+}
+
+@media(max-width:600px){
+  
+}

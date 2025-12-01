@@ -1,14 +1,24 @@
-import Layout from "../components/layout/Layout";
-import AuthForm from "../components/template/autForm";
-import HomePage from "../components/template/HomePage";
+import { serverFetch } from "../components/core/services/http";
+import AllTours from "../components/template/AllTours";
+import Attribute from "../components/template/Attribute";
+import AuthForm from "../components/template/authForm";
+import Info from "../components/template/Info";
+import Searchbar from "../components/template/Searchbar";
+import Slider from "../components/template/Slider";
 
-export default function Home() {
+async function Home() {
+  const data = await serverFetch("tour");
+  // console.log("serverFetchData:",data);
   return (
-    <div>
-      <Layout>
-      <HomePage />
+    <>
+      <Searchbar />
+      <AllTours toursData={data} />
+      <Info />
+      <Slider />
+      <Attribute />
       <AuthForm />
-      </Layout>
-    </div>
+    </>
   );
 }
+
+export default Home;

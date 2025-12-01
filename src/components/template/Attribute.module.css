@@ -1,40 +1,82 @@
 .line {
-  width: 100%;
+    width: 100%;
   border-top: 1px solid #00000033;
+  margin: 40px auto;         
+  padding: 0 126px;          
+  box-sizing: border-box
 }
 
 .container {
   display: flex;
-  margin-left: 153px;
-  margin-right: 153px;
+  align-items: center;
   justify-content: baseline;
-  margin-top: 20px;
+  margin: 20px auto;
+  padding: 0 126px;
+  box-sizing: border-box;
 }
 
 .container img {
-  display: flex;
-  align-items: baseline;
-  margin-top: auto;
   margin-left: 20px;
 }
 
 .container div {
-  display: block;
-  justify-content: baseline;
-  margin-top: auto;
   margin-left: 40px;
 }
 .container h2 {
   margin-bottom: 10px;
-  font-family: Vazir FD-WOL;
   font-size: 26px;
   font-weight: 500;
-  line-height: 40.63px;
   color: #282828;
 }
 .container p {
   text-align: justify;
-  font-family: Vazir FD-WOL;
   font-size: 16px;
   font-weight: 300;
+}
+
+@media (max-width: 600px) {
+  .container {
+    display: grid;
+    grid-template-columns: 50px 1fr; /* ستون اول آیکن، ستون دوم متن */
+    grid-auto-rows: auto; /* ارتفاع ردیف‌ها خودکار */
+    align-items: center; /* عمودی وسط آیکن و متن */
+    justify-content: center;
+    gap: 20px 8px; /* فاصله بین ستون‌ها و ردیف‌ها */
+    width: 100%;
+    max-width: 340px;
+    margin: 20px auto;
+    padding: 0 10px;
+    box-sizing: border-box;
+  }
+
+  .container img,
+  .container svg {
+    justify-self: end; /* آیکن سمت راست در حالت RTL */
+    width: 71px;
+    height: 64px;
+  }
+
+  .container div {
+    margin: 0;
+    text-align: right;
+  }
+
+  .container h2 {
+    font-size: 18px;
+    margin-bottom: 4px;
+    font-weight: 500;
+    color: #282828;
+  }
+
+  .container p {
+    font-size: 14px;
+    font-weight: 300;
+    color: #444;
+    line-height: 1.5;
+  }
+ .line {
+    max-width: 90%;         /* عرض مناسب برای موبایل */
+    padding: 0 24px;          /* فاصله از دو طرف کمتر */
+    margin: 20px auto;
+  }
 }

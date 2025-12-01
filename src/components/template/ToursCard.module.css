@@ -1,0 +1,88 @@
+.container {
+  display: block;
+  margin: 0 8px 10px;
+  border-radius: 10px;
+  border: 1px solid #0000001f;
+  width: 274px;
+  overflow: hidden;
+  box-shadow: 0px 4px 10px #0000001a;
+  background: #ffffff;
+  transition: transform 0.3s ease;
+}
+.container:hover {
+  transform: scale(1.03);
+}
+
+.content {
+  padding: 0px 10px;
+}
+.content h2 {
+  font-size: 22px;
+  padding-top: 5px;
+}
+.content p {
+  font-size: 15px;
+  padding-top: 10px;
+  color: #282828b2;
+}
+
+.reserv {
+  display: flex;
+  justify-content: space-between;
+  padding: 6px 8px;
+}
+
+.separator {
+  height: 1px;
+  background: #e6e6e6;
+  margin-top: 5px;
+}
+.reserv a {
+  text-align: center;
+  border: none;
+  border-radius: 4px;
+  color: #fff;
+  background: #28a745;
+  width: 64px;
+  height: 25px;
+  font-size: 15px;
+  cursor: pointer;
+}
+.reserv a span {
+  text-align: center;
+  align-items: center;
+}
+.price span {
+  font-size: 18px;
+  text-align: right;
+  color: #009eca;
+}
+.price {
+  display: flex;
+  padding: 0px 8px;
+  align-items: center;
+}
+
+.price span {
+  margin-left: 3px;
+}
+.price p {
+  font-weight: 400;
+  font-size: 12px;
+  text-align: right;
+  color: #282828cc;
+}
+@media (max-width: 600px) {
+  .container {
+    width: 327px;
+  }
+  .container img {
+    width: 327px;
+  }
+  .reserv a {
+    padding: 2px 0;
+    width: 99px;
+    height: 29px;
+  }
+  
+}

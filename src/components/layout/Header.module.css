@@ -1,0 +1,159 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 0;
+  text-align: center;
+  margin: 0 126px;
+}
+
+.signup span {
+  display: flex;
+  align-items: center;
+  border: 2px solid #28a745;
+  border-radius: 8px;
+  padding: 8px;
+  color: #28a745;
+  font-size: 18px;
+  font-weight: 500;
+}
+.logoandlist {
+  display: flex;
+}
+.logoandlist ul {
+  display: flex;
+  margin-top: 10px;
+  margin-right: 30px;
+  justify-content: space-between;
+}
+
+.logoandlist li {
+  padding: 0 25px;
+  color: #282828;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+
+
+.logoandlist img {
+  width: 146px;
+}
+
+/* Mobile controls */
+.mobileControls {
+  display: none;
+  align-items: center;
+  gap: 12px;
+}
+.hamburger {
+  width: 36px;
+  height: 36px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: #fff;
+  cursor: pointer;
+}
+.hamburger span {
+  display: block;
+  width: 18px;
+  height: 2px;
+  border: 1px solid #10411b;
+  box-shadow: 0 6px 0 #10411b, 0 -6px 0 #10411b;
+}
+.mobileMenu {
+  display: none;
+  position: absolute;
+  top: 64px;
+  right: 16px;
+  background: #fff;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+  border-radius: 8px;
+  padding: 8px 12px;
+  z-index: 80;
+}
+.mobileMenu.open {
+  display: block;
+}
+
+/* Responsive layout adjustments */
+@media (max-width: 1200px) {
+  .header {
+    margin: 0 80px;
+  }
+}
+@media (max-width: 900px) {
+  .header {
+    margin: 0 40px;
+  }
+  .logoandlist ul {
+    gap: 12px;
+  }
+  .logoandlist li {
+    padding: 0 12px;
+  }
+   .mobileMenu {
+    display: none;
+   }
+}
+@media (max-width: 600px) {
+  .header {
+    margin: 0 31px;
+    /* display: flex; */
+    /* justify-content: space-between; */
+  }
+  /* hide desktop nav and show mobile controls */
+  .logoandlist {
+    display: none;
+  }
+  .mobileControls {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+  }
+
+  .mobileControls button:last-child {
+    width: fit-content;
+    height: 40px;
+    border-radius: 8px;
+    padding: 8px;
+    border: 1px solid #28a745;
+  }
+
+  .mobileMenu {
+    display: none;
+    position: absolute;
+    z-index: 1000;
+    top: 0px;
+    right: 0px;
+    padding: 12px 16px;
+    width: 209px;
+    height: 800px;
+    border-radius: 12px;
+  }
+
+  .mobileMenu ul {
+    display: flex;
+    flex-direction: column; 
+    align-items: flex-start;
+  }
+ .mobileMenu li {
+  padding: 22px  0; 
+}
+
+  .mobileMenu a {
+    display: flex;
+    flex-direction: row; 
+    gap: 8px;
+    transition: color 0.3s;
+  }
+  .open {
+    display: none;
+  }
+
+  .signup {
+    display: none; /* hide desktop signup button */
+  }
+}

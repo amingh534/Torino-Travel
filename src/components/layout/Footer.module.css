@@ -1,0 +1,124 @@
+.footer {
+  display: flex;
+  justify-content: space-between;
+  border-top: 1px solid #00000033;
+  margin: 0 126px;
+}
+
+.leftfooter {
+  margin-top: 30px;
+  padding: 10px 0;
+  align-items: start;
+  text-align: left;
+}
+.leftfooter p {
+  margin-top: 20px;
+  font-weight: 400;
+}
+.footerlogo {
+  text-align: left;
+}
+
+.icon {
+  display: flex;
+  flex-direction: row;
+  margin: 36px 0 28px 0;
+  gap: 25px;
+}
+
+.rightfooter {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 21px;
+  text-align: right;
+}
+.rightfooter h3 {
+  margin-top: 21px;
+  font-size: 24px;
+  font-weight: 600;
+  color: #282828;
+}
+
+.rightfooter ul {
+  margin-top: 24px;
+}
+.rightfooter li {
+  padding: 8px 0;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+.rightside li {
+  color: #282828;
+}
+.leftside {
+  margin-right: 100px;
+}
+.copyright {
+  box-shadow: 0px 1px 4px 0px #00000029;
+  height: 50px;
+  text-align: center;
+  padding-top: 12px;
+  font-size: 16px;
+  font-weight: 400;
+  color: black;
+}
+
+@media (max-width: 600px) {
+  .footer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    max-width: 390px;
+    margin: 0 auto;
+    position: relative;
+    border-top: none;
+  }
+  .footer::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 85%; 
+  border-top: 1px dashed #00000033;
+   border-image: repeating-linear-gradient(to right, #00000033 0 12px, transparent 12px 20px) 1;
+
+  }
+ 
+  .rightfooter {
+    display: flex;
+    justify-items: center;
+    justify-content: center;
+    align-items: center;
+    margin-top: 24px;
+  }
+  .leftfooter {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    max-width: 390px;
+    margin: 0 auto;
+    padding: 0 16px;
+  }
+
+  .icon {
+    display: grid;
+    grid-template-columns: repeat(3, 38px); /* سه آیکن در ردیف اول */
+    grid-template-rows: repeat(2, 36px); /* دو ردیف */
+    justify-content: center;
+    align-content: center;
+  }
+  .icon svg {
+    width: auto;
+    height: 52px;
+  }
+  .footerlogo {
+    font-size: 14px;
+   color: #000000;
+
+  }
+}

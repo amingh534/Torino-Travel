@@ -10,7 +10,7 @@ function ModalContainer({ children, isOpen, setIsOpen }) {
     }
   }, [isOpen]);
   
-  if (!isOpen) return;
+  if (!isOpen) return null;
   const handleBackdropClick = () => {
     setIsHide(true);
     setTimeout(() => setIsOpen(false), 300); 

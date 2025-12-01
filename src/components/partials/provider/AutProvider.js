@@ -3,7 +3,7 @@ import { useRouter } from "next/navigation";
 import { useGetUserData } from "../../core/services/queries";
 import { useEffect } from "react";
 
-function AutProvider({ children }) {
+function AuthProvider({ children }) {
   const router = useRouter();
   const { isPending, data } = useGetUserData();
   useEffect(() => {
@@ -19,4 +19,4 @@ function AutProvider({ children }) {
   return children;
 }
 
-export default AutProvider;
+export default AuthProvider;

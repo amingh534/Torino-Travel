@@ -7,7 +7,7 @@ const useGetUserData = () => {
 
   const queryFn = () => api.get("user/profile");
   const queryKey = ["user-data"];
-  return useQuery({ queryFn, queryKey });
+  return useQuery({ queryFn, queryKey,retry:2 });
 };
 const useGetTours = (query) => {
   // console.log("useGetTours:",query);

@@ -32,7 +32,7 @@ const useCheckOtp = () => {
 //   return useMutation({ mutationFn, onSuccess });
 // };
 
-const useUpdateBankAccount = () => {
+const useUpdateData = () => {
   const queryClient = useQueryClient();
   const mutationFn = (data) => api.put("/user/profile", data);
   const onSuccess = () => {
@@ -42,6 +42,7 @@ const useUpdateBankAccount = () => {
   return useMutation({ mutationFn, onSuccess });
 };
 
+
 // const usePutUserData = () => {
 //   const mutationFn = (data) => api.put("user/profile", data);
 //   return {
@@ -49,4 +50,4 @@ const useUpdateBankAccount = () => {
 //   };
 // };
 
-export { useSendOtp, useCheckOtp, useUpdateBankAccount };
+export { useSendOtp, useCheckOtp, useUpdateData };

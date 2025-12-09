@@ -1,30 +1,39 @@
 import Edit from "@/public/icons/Edit";
 import { yupResolver } from "@hookform/resolvers/yup";
+import { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
 import toast from "react-hot-toast";
 import { bankAccountSchema } from "src/components/core/schema";
-import { useUpdateBankAccount } from "src/components/core/services/mutation";
+import { useUpdateData } from "src/components/core/services/mutation";
 
-function BankAccountForm({
-  showTransactions,
-  setShowTransactions,
-  data,
-  setProfileData,
-}) {
-  const { mutate, isPending } = useUpdateBankAccount();
-//   const { shaba_code, accountIdentifier, debitCard_code } = data?.payment;
+function BankAccountForm({ data }) {
+  
+  const [showTransactions, setShowTransactions] = useState(false);
+  const { mutate, isPending } = useUpdateData();
+
   const {
     register,
     handleSubmit,
+    reset,
     formState: { errors },
   } = useForm({
     resolver: yupResolver(bankAccountSchema),
     defaultValues: {
-      shaba_code: data?.payment?.shaba_code,
-      accountIdentifier: data?.payment?.accountIdentifier,
-      debitCard_code: data?.payment?.debitCard_code,
+      shaba_code: data?.payment?.shaba_code || "",
+      accountIdentifier: data?.payment?.accountIdentifier || "",
+      debitCard_code: data?.payment?.debitCard_code || "",
     },
   });
+
+  useEffect(() => {
+    if (data?.payment) {
+      reset({
+        shaba_code: data.payment.shaba_code,
+        accountIdentifier: data.payment.accountIdentifier,
+        debitCard_code: data.payment.debitCard_code,
+      });
+    }
+  }, [data,reset]);
 
   const submitHandler = (data) => {
     if (isPending) return;
@@ -32,12 +41,14 @@ function BankAccountForm({
       { payment: data },
       {
         onSuccess: ({ data }) => {
+          console.log(data);
           toast.success(data?.message);
-          setProfileData((prev) => ({ ...prev, payment: data.user.payment }));
           setShowTransactions(false);
         },
         onError: ({ response }) => {
-          toast.error(response?.data?.message || "دوباره وارد حساب کاربری شوید");
+          toast.error(
+            response?.data?.message || "دوباره وارد حساب کاربری شوید"
+          );
         },
       }
     );
@@ -63,11 +74,6 @@ function BankAccountForm({
                     ? "text-red-600 placeholder-red-600  focus:border-red-600"
                     : ""
                 }`}
-                // name="lastName"
-                // value={profiledata.payment}
-                // onChange={(e) =>
-                //   setProfileData({ ...profiledata, payment: e.target.value })
-                // }
                 {...register("shaba_code")}
                 aria-invalid={errors.shaba_code ? "true" : "false"}
               />

@@ -1,11 +1,7 @@
 
 
 function EmailInput({
-  name,
-  profiledata,
-  setProfileData,
   setShowEmail,
-  updateUser,
   toast,
 }) {
   // useEffect(() => {
@@ -16,6 +12,8 @@ function EmailInput({
   //     }));
   //   }
   // }, []);
+  // const [showEmail, setShowEmail] = useState(false);
+  
   const handleChange = (e) => {
     const { name, value } = e.target;
     setProfileData((prev) => ({ ...prev, [name]: value }));
@@ -37,6 +35,9 @@ function EmailInput({
 
   return (
     <div>
+      <form sub>
+
+    
       <input
         className=" ml-2 p-2 w-[255px] h-[45px] rounded-md text-[#00000080] border border-[#00000033] outline-none"
         placeholder="آدرس ایمیل"
@@ -50,6 +51,7 @@ function EmailInput({
       >
         تایید
       </button>
+        </form>
     </div>
   );
 }

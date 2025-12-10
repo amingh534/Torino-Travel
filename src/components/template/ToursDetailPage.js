@@ -10,6 +10,7 @@ import Capacity from "@/public/icons/Capacity";
 import Insurance from "@/public/icons/Insurance";
 import DateConverter from "@/utils/dateConverter";
 import { e2p, sp } from "@/utils/replaceNumbers";
+import Link from "next/link";
 
 function ToursDetailPage({
   detailsData: {
@@ -53,7 +54,7 @@ function ToursDetailPage({
             </div>
             <div className={styles.buy}>
               <span>{e2p(sp(price))} </span>
-              <button>رزرو و خرید</button>
+              <Link href="/buy-tours/checkout">رزرو و خرید</Link>
             </div>
           </div>
         </div>

@@ -2,7 +2,7 @@
 import { Toaster } from "react-hot-toast";
 import {
   useGetUserData,
-  usePutUserData,
+ 
 } from "src/components/core/services/queries";
 import BankAccountForm from "@/template/bankAccountFrom";
 import PersonalInfoFrom from "@/template/personalInfoForm";
@@ -36,7 +36,7 @@ function ProfilePage() {
 
   const { data: userResponse } = useGetUserData();
   const user = userResponse?.data;
-  const updateUser = usePutUserData();
+  // const updateUser = usePutUserData();
   // console.log("PutData:", updateUser);
   // console.log("ProfileData:", profiledata);
   // console.log("User:", user);

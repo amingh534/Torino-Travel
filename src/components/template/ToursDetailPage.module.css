@@ -73,12 +73,14 @@
   color: #282828cc;
 }
 
-.buy button {
+.buy a {
   position: absolute;
   width: 204px;
   height: 56px;
   border-radius: 10px;
   left: 10%;
+  padding: 8px 0;
+  text-align: center;
   border: none;
   background: #28a745;
   font-weight: 300;

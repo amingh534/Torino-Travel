@@ -17,19 +17,19 @@ const useGetTours = (query) => {
   return useQuery({ queryFn, queryKey, enabled: false });
 };
 
-const usePutUserData = () => {
-  const queryClient = useQueryClient();
-  // console.log("Query:",queryClient);
+// const usePutUserData = () => {
+//   const queryClient = useQueryClient();
+//   // console.log("Query:",queryClient);
 
-  return useMutation({
-    mutationFn: (data) => api.put("user/profile", data),
-    onSuccess: () => {
-      queryClient.invalidateQueries({ queryKey: ["user-data"] });
-    },
+//   return useMutation({
+//     mutationFn: (data) => api.put("user/profile", data),
+//     onSuccess: () => {
+//       queryClient.invalidateQueries({ queryKey: ["user-data"] });
+//     },
    
-  });
-};
+//   });
+// };
 // const queryFn = () => api.put("user/profile");
 // const queryKey = ["put-user-data"];
 // return useQuery({ queryFn, queryKey });
-export { useGetUserData, useGetTours, usePutUserData };
+export { useGetUserData, useGetTours };

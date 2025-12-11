@@ -19,9 +19,10 @@ function ReservationButton({ id }) {
     mutate(id, {
       onSuccess: (data) => {
         toast.success(data?.data.message);
-        router.push("/buy-tours/checkout");
+        router.push("/checkout");
       },
       onError: (error) => {
+        toast.error("لطفاواردحساب کاربری خود شوید.")
         setIsModalOpen(true);
       },
     });

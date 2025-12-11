@@ -1,4 +1,3 @@
-import React from "react";
 import styles from "./ToursDetailPage.module.css";
 import Usertrick from "@/public/icons/Usertick";
 import Map from "@/public/icons/Map";
@@ -10,7 +9,6 @@ import Capacity from "@/public/icons/Capacity";
 import Insurance from "@/public/icons/Insurance";
 import DateConverter from "@/utils/dateConverter";
 import { e2p, sp } from "@/utils/replaceNumbers";
-import Link from "next/link";
 import ReservationButton from "../atoms/Reservation";
 
 function ToursDetailPage({

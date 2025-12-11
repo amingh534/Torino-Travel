@@ -7,7 +7,7 @@ const useGetUserData = () => {
 
   const queryFn = () => api.get("user/profile");
   const queryKey = ["user-data"];
-  return useQuery({ queryFn, queryKey,retry:2 });
+  return useQuery({ queryFn, queryKey, retry: 2 });
 };
 const useGetTours = (query) => {
   // console.log("useGetTours:",query);
@@ -16,12 +16,11 @@ const useGetTours = (query) => {
   const queryKey = ["tour", query];
   return useQuery({ queryFn, queryKey, enabled: false });
 };
-// const useUpdateBasket = () => {
-//   const mutationFn = (id) => api.get(`/basket`);
-
-//   return useMutation({ mutationFn});
-// };
-
+const useGetBasket = () => {
+  const queryFn = () => api.get("basket");
+  const queryKey = ["user-basket"];
+  return useQuery({ queryFn, queryKey });
+};
 
 // const usePutUserData = () => {
 //   const queryClient = useQueryClient();
@@ -32,10 +31,10 @@ const useGetTours = (query) => {
 //     onSuccess: () => {
 //       queryClient.invalidateQueries({ queryKey: ["user-data"] });
 //     },
-   
+
 //   });
 // };
 // const queryFn = () => api.put("user/profile");
 // const queryKey = ["put-user-data"];
 // return useQuery({ queryFn, queryKey });
-export { useGetUserData, useGetTours };
+export { useGetUserData, useGetTours, useGetBasket };

@@ -16,6 +16,12 @@ const useGetTours = (query) => {
   const queryKey = ["tour", query];
   return useQuery({ queryFn, queryKey, enabled: false });
 };
+// const useUpdateBasket = () => {
+//   const mutationFn = (id) => api.get(`/basket`);
+
+//   return useMutation({ mutationFn});
+// };
+
 
 // const usePutUserData = () => {
 //   const queryClient = useQueryClient();

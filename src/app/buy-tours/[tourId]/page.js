@@ -4,7 +4,7 @@ import { serverFetch } from "src/components/core/services/http";
 
 async function ToursDetails({ params }) {
   const { tourId } = params;
-  const data = await serverFetch(`tour/${tourId}`);
+  const data = await serverFetch(`tour/${tourId}`, null, { cache: "no-store" });
   return <ToursDetailPage detailsData={data} />;
 }
 

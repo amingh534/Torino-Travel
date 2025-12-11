@@ -41,7 +41,21 @@ const useUpdateData = () => {
 
   return useMutation({ mutationFn, onSuccess });
 };
+// const useUpdateBasket = () => {
+//   const queryClient = useQueryClient();
+//   const mutationFn = (tourId) => api.put(`/basket/${tourId}`);
+//   const onSuccess = () => {
+//     queryClient.invalidateQueries({ queryKey: ["user-data"] });
+//   };
 
+//   return useMutation({ mutationFn, onSuccess });
+// };
+
+const useUpdateBasket = () => {
+  const mutationFn = (id) => api.put(`/basket/${id}`);
+
+  return useMutation({ mutationFn});
+};
 
 // const usePutUserData = () => {
 //   const mutationFn = (data) => api.put("user/profile", data);
@@ -50,4 +64,4 @@ const useUpdateData = () => {
 //   };
 // };
 
-export { useSendOtp, useCheckOtp, useUpdateData };
+export { useSendOtp, useCheckOtp, useUpdateData, useUpdateBasket };

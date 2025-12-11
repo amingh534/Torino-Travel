@@ -118,7 +118,7 @@ function Header() {
           setStep={setStep}
           isOpen={isModalOpen}
           setIsOpen={setIsModalOpen}
-          responsive={isOpen}
+          // responsive={isOpen}
         />
         // </ModalContainer>
       )}

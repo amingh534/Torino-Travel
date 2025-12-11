@@ -11,9 +11,11 @@ import Insurance from "@/public/icons/Insurance";
 import DateConverter from "@/utils/dateConverter";
 import { e2p, sp } from "@/utils/replaceNumbers";
 import Link from "next/link";
+import ReservationButton from "../atoms/Reservation";
 
 function ToursDetailPage({
   detailsData: {
+    id,
     image,
     title,
     price,
@@ -24,7 +26,6 @@ function ToursDetailPage({
     availableSeats,
   },
 }) {
-  // console.log(detailsData);
   // console.log(props?.id);
   // console.log("ToursDetailsPage:", detailsData);
   // const { image, title, price } = props;
@@ -54,7 +55,8 @@ function ToursDetailPage({
             </div>
             <div className={styles.buy}>
               <span>{e2p(sp(price))} </span>
-              <Link href="/buy-tours/checkout">رزرو و خرید</Link>
+              {/* <Link href="/buy-tours/checkout">رزرو و خرید</Link> */}
+              <ReservationButton id={id} />
             </div>
           </div>
         </div>

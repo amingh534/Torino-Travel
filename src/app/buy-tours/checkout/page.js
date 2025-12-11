@@ -7,7 +7,8 @@ import { useForm } from "react-hook-form";
 import { personalFormSchema } from "src/components/core/schema";
 import { DatePicker } from "zaman";
 
-function CheckOut() {
+function CheckOut({ searchParams }) {
+  console.log("Params:", searchParams);
   const {
     register,
     handleSubmit,
@@ -116,8 +117,7 @@ function CheckOut() {
             </select>
           </div>
         </div>
-        <div 
-        className="flex  bg-[#ffff] outline-none rounded-[10px] w-[307px] h-[228px] ">
+        <div className="flex  bg-[#ffff] outline-none rounded-[10px] w-[307px] h-[228px] ">
           <h1>جزئیات پرداخت</h1>
         </div>
       </div>

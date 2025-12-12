@@ -7,11 +7,10 @@ import { useForm } from "react-hook-form";
 import { personalFormSchema } from "src/components/core/schema";
 import { DatePicker } from "zaman";
 import AuthProvider from "src/components/partials/provider/AutProvider";
-import { serverFetch } from "src/components/core/services/http";
 import { useGetBasket } from "src/components/core/services/queries";
+import { e2p, sp } from "@/utils/replaceNumbers";
 
 function CheckOut() {
-  // const data = await serverFetch("basket", null, { cache: "no-store" });
   const { data, isPending } = useGetBasket();
   console.log(data);
   const {
@@ -125,13 +124,30 @@ function CheckOut() {
               </select>
             </div>
           </div>
-          <div className="flex  bg-[#ffff] outline-none rounded-[10px] w-[307px] h-[228px] ">
-            <h1>جزئیات پرداخت</h1>
+          <div className="flex flex-col  bg-[#ffff] outline-none rounded-[10px] w-[307px] h-[228px] ">
+            <div className="flex w-full ">
+              <h1 className="font-semibold p-4  text-2xl text-black">
+                {data?.data?.title}
+              </h1>
+              <p className="font-normal mr-auto p-5 text-base text-[#282828]">
+                5روز و 4 شب
+              </p>
+            </div>
+            <div className="flex  items-center px-4 py-8 border-t border-dashed border-[#00000080]">
+              <p className=" font-normal text-[#282828]">قیمت نهایی</p>
+              <span className="mr-14 text-2xl text-[#009eca] font-medium after:content-['تومان'] after:text-[#282828] after:text-base after:font-normal after:mr-1">
+                {e2p(sp(data?.data?.price))}
+              </span>
+            </div>
+            <button className="w-[283px] h-[56px] p-2 rounded-[10px] bg-[#28A745] border-none text-white font-normal text-base  mx-4">
+              ثبت و خرید نهایی
+            </button>
           </div>
         </div>
       </form>
     </AuthProvider>
   );
 }
+// ;border-t  border-dashed border-[#00000080]
 
 export default CheckOut;

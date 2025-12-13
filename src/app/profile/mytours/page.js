@@ -1,8 +1,19 @@
+"use client";
+
+import { useGetUserTours } from "src/components/core/services/queries";
 
 function MyToursPage() {
+  const { data, isPending, isError } = useGetUserTours();
+  if (isPending) return <div>درحال بارگذاری...</div>;
+  console.log("UserToursData:", data, isPending, isError);
   return (
-    <div>MyToursPage</div>
-  )
+    <div>
+      <h1>MyToursPage</h1>
+      {data?.data?.map((tour) => (
+        <p key={tour.id}>{tour.title}</p>
+      ))}
+    </div>
+  );
 }
 
-export default MyToursPage
+export default MyToursPage;

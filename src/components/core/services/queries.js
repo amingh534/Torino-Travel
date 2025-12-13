@@ -21,7 +21,11 @@ const useGetBasket = () => {
   const queryKey = ["user-basket"];
   return useQuery({ queryFn, queryKey });
 };
-
+const useGetUserTours = () => {
+  const queryFn = () => api.get("user/tours");
+  const queryKey = ["user-tours"];
+  return useQuery({ queryFn, queryKey });
+};
 // const usePutUserData = () => {
 //   const queryClient = useQueryClient();
 //   // console.log("Query:",queryClient);
@@ -37,4 +41,4 @@ const useGetBasket = () => {
 // const queryFn = () => api.put("user/profile");
 // const queryKey = ["put-user-data"];
 // return useQuery({ queryFn, queryKey });
-export { useGetUserData, useGetTours, useGetBasket };
+export { useGetUserData, useGetTours, useGetBasket, useGetUserTours };

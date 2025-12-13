@@ -9,10 +9,16 @@ import { DatePicker } from "zaman";
 import AuthProvider from "src/components/partials/provider/AutProvider";
 import { useGetBasket } from "src/components/core/services/queries";
 import { e2p, sp } from "@/utils/replaceNumbers";
+import { useCheckout } from "src/components/core/services/mutation";
+import toast from "react-hot-toast";
+import Link from "next/link";
+import { useRouter } from "next/navigation";
 
 function CheckOut() {
   const { data, isPending } = useGetBasket();
-  console.log(data);
+  const { mutate } = useCheckout();
+  const router = useRouter()
+  // console.log(data);
   const {
     register,
     handleSubmit,
@@ -32,7 +38,8 @@ function CheckOut() {
   });
 
   const submitHandler = (formData) => {
-    if (isPending) return;
+    console.log(formData);
+    // if (isPending) return;
     // console.log("fromData:",formData);
     // const [firstName, ...lastName] = formData.fullName.trim().split(" ");
 
@@ -44,21 +51,24 @@ function CheckOut() {
     //   gender: formData.gender,
     // };
 
-    mutate(
-      { data: formData },
-      {
-        onSuccess: ({ data }) => {
-          toast.success(data?.message);
-          setShowPersonalInfo(false);
-        },
-        onError: ({ response }) => {
-          toast.error(
-            response?.data?.message || "دوباره وارد حساب کاربری شوید"
-          );
-        },
-      }
-    );
+    mutate(formData, {
+      onSuccess: ({ data }) => {
+        toast.success(data?.message);
+        router.push("/payment?status=success")
+        console.log(data);
+      },
+      onError: ({ response }) => {
+        toast.error(response?.data?.message || "دوباره وارد حساب کاربری شوید");
+      },
+    });
   };
+  if (!data)
+    return (
+      <div>
+        <p>سبد شما خالی است.</p>
+        <Link href="/">برو به صفحه اصلی</Link>
+      </div>
+    );
   return (
     <AuthProvider>
       <form onSubmit={handleSubmit(submitHandler)}>
@@ -139,7 +149,10 @@ function CheckOut() {
                 {e2p(sp(data?.data?.price))}
               </span>
             </div>
-            <button className="w-[283px] h-[56px] p-2 rounded-[10px] bg-[#28A745] border-none text-white font-normal text-base  mx-4">
+            <button
+              type="submit"
+              className="w-[283px] h-[56px] p-2 rounded-[10px] bg-[#28A745] border-none text-white font-normal text-base  mx-4"
+            >
               ثبت و خرید نهایی
             </button>
           </div>

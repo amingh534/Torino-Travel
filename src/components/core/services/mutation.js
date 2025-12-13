@@ -54,7 +54,7 @@ const useUpdateData = () => {
 const useUpdateBasket = () => {
   const mutationFn = (id) => api.put(`/basket/${id}`);
 
-  return useMutation({ mutationFn});
+  return useMutation({ mutationFn });
 };
 
 // const usePutUserData = () => {
@@ -63,5 +63,8 @@ const useUpdateBasket = () => {
 //     mutationFn,
 //   };
 // };
-
-export { useSendOtp, useCheckOtp, useUpdateData, useUpdateBasket };
+const useCheckout = () => {
+  const mutationFn = (data) => api.post("order", data);
+  return useMutation({ mutationFn });
+};
+export { useSendOtp, useCheckOtp, useUpdateData, useUpdateBasket, useCheckout };

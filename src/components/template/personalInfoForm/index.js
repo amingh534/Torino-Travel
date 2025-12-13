@@ -163,7 +163,7 @@ function PersonalInfoFrom({ data }) {
               <p>
                 نام و نام خانوادگی
                 {" "}
-                 {data?.data.fullName} 
+                 {data?.data?.fullName} 
               </p>
               <p className="mt-4  ">
                 جنسیت

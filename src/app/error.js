@@ -1,11 +1,7 @@
-"use client"
-import Image from "next/image"
-import styles from "./DisconnectPage.module.css"
-
-function DisconnectPage(props) {
-  console.log(props);
-  const { onRetry } = props;
-
+"use client";
+import Image from "next/image";
+import styles from "../components/template/DisconnectPage.module.css"; 
+function Error({reset}) {
   return (
     <div className={styles.container}>
       <div className={styles.left}>
@@ -13,13 +9,13 @@ function DisconnectPage(props) {
       </div>
       <div className={styles.right}>
         <h2>!اتصال با سرور برقرار نیست</h2>
-        <div >
+        <div>
           <p>.لطفا بعدا دوباره امتحان کنید</p>
         </div>
       </div>
-      <button>تلاش مجدد</button>
+      <button onClick={() => reset()}>تلاش مجدد</button>
     </div>
-  )
+  );
 }
 
-export default DisconnectPage
+export default Error;

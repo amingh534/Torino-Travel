@@ -18,6 +18,7 @@ function ReservationButton({ id }) {
     if (isPending) return;
     mutate(id, {
       onSuccess: (data) => {
+        if(data?.data?.id === id) return <p>این تور قبلا خریداری شده است</p>
         toast.success(data?.data.message);
         router.push("/checkout");
       },
@@ -49,6 +50,7 @@ function ReservationButton({ id }) {
         )
       ) : (
         <button
+        
           onClick={clickHandler}
           className="absolute  w-[204px] h-[56px] border-none bg-[#28a745] font-light text-2xl text-[#ffff] rounded-[10px] "
         >

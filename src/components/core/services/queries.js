@@ -26,6 +26,11 @@ const useGetUserTours = () => {
   const queryKey = ["user-tours"];
   return useQuery({ queryFn, queryKey });
 };
+const useGetUserTransactions = () => {
+  const queryFn = () => api.get("user/transactions");
+  const queryKey = ["user-transactions"];
+  return useQuery({ queryFn, queryKey });
+};
 // const usePutUserData = () => {
 //   const queryClient = useQueryClient();
 //   // console.log("Query:",queryClient);
@@ -41,4 +46,4 @@ const useGetUserTours = () => {
 // const queryFn = () => api.put("user/profile");
 // const queryKey = ["put-user-data"];
 // return useQuery({ queryFn, queryKey });
-export { useGetUserData, useGetTours, useGetBasket, useGetUserTours };
+export { useGetUserData, useGetTours, useGetBasket, useGetUserTours, useGetUserTransactions };

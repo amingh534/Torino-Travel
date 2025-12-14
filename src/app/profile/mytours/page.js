@@ -9,8 +9,8 @@ function MyToursPage() {
   return (
     <div>
       <h1>MyToursPage</h1>
-      {data?.data?.map((tour) => (
-        <p key={tour.id}>{tour.title}</p>
+      {data?.data?.map((tour,index) => (
+        <p key={`${tour.id}-${index}`}>{tour.title}</p>
       ))}
     </div>
   );

@@ -17,7 +17,7 @@ import { useRouter } from "next/navigation";
 function CheckOut() {
   const { data, isPending } = useGetBasket();
   const { mutate } = useCheckout();
-  const router = useRouter()
+  const router = useRouter();
   // console.log(data);
   const {
     register,
@@ -54,7 +54,7 @@ function CheckOut() {
     mutate(formData, {
       onSuccess: ({ data }) => {
         toast.success(data?.message);
-        router.push("/payment?status=success")
+        router.push("/payment?status=success");
         console.log(data);
       },
       onError: ({ response }) => {

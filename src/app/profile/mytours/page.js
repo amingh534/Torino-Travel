@@ -38,10 +38,12 @@ function MyToursPage() {
                 <h1 className="mr-1 font-medium text-sm text-black">
                   {tour.title}
                 </h1>
-                {icons[tour.fleetVeichle]}
-                <p className="m-auto font-medium text-sm text-black">
-                  سفر با {tour.fleetVehicle}
-                </p>
+                <div className="flex m-auto">
+                  <span>{icons[tour.fleetVehicle]}</span>
+                  <p className=" mr-2 font-medium text-sm text-black">
+                    سفر با {tour.fleetVehicle}
+                  </p>
+                </div>
               </div>
               <div className="flex p-5 font-medium text-black text-sm ">
                 <div className="flex">
@@ -67,7 +69,7 @@ function MyToursPage() {
                     شماره تور
                   </p>
                   <span className="font-normal mr-3">10209544</span>
-                   <span className="border-l-[1px] border-[#00000033] mx-7 h-7"></span>
+                  <span className="border-l-[1px] border-[#00000033] mx-7 h-7"></span>
                 </div>
                 <div className="flex mr-5">
                   <p className="text-[#00000099] font-normal text-sm">

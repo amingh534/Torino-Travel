@@ -1,4 +1,9 @@
-import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
+import {
+  keepPreviousData,
+  useMutation,
+  useQuery,
+  useQueryClient,
+} from "@tanstack/react-query";
 import api from "../config/api";
 import QueryString from "qs";
 
@@ -31,6 +36,16 @@ const useGetUserTransactions = () => {
   const queryKey = ["user-transactions"];
   return useQuery({ queryFn, queryKey });
 };
+const usePagination = (page) => {
+  const queryFn = () => api.get(`user/tours?page=${page}`);
+  const queryKey = ["user-pagination", page];
+  return useQuery({
+    queryFn,
+    queryKey,
+    placeholderData: keepPreviousData,
+    staleTime: 5000,
+  });
+};
 // const usePutUserData = () => {
 //   const queryClient = useQueryClient();
 //   // console.log("Query:",queryClient);
@@ -46,4 +61,11 @@ const useGetUserTransactions = () => {
 // const queryFn = () => api.put("user/profile");
 // const queryKey = ["put-user-data"];
 // return useQuery({ queryFn, queryKey });
-export { useGetUserData, useGetTours, useGetBasket, useGetUserTours, useGetUserTransactions };
+export {
+  useGetUserData,
+  useGetTours,
+  useGetBasket,
+  useGetUserTours,
+  useGetUserTransactions,
+  usePagination,
+};

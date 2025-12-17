@@ -1,3 +1,6 @@
+import Airplane from "@/public/icons/Airplane";
+import Transportaion from "@/public/icons/Transportaion";
+
 export const personalInfoSchema = [
   {
     name: "fullName",
@@ -15,3 +18,10 @@ export const personalInfoSchema = [
     ],
   },
 ];
+export const icons = {
+  ون: <Transportaion />,
+  اتوبوس: <Transportaion />,
+  SUV: <Transportaion />,
+  هواپیما: <Airplane />,
+  لندکروز: <Transportaion />,
+};

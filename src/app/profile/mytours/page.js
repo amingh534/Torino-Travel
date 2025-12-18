@@ -50,6 +50,7 @@ function MyToursPage() {
                   <h2 className="font-medium text-black text-sm">
                     {tour.origin.name} به {tour.destination.name}
                   </h2>
+                 
                   <span className="mr-3 text-[#00000099] font-normal text-sm ">
                     {DateConverter(tour.startDate)}
                   </span>

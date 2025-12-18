@@ -9,7 +9,6 @@ import { e2p, sp } from "@/utils/replaceNumbers";
 
 function MyToursPage() {
   const { data, isPending, isError } = useGetUserTours();
-  console.log(data);
   const tours = data?.data || [];
   const [currentPage, setCurrentPage] = useState(1);
 
@@ -23,7 +22,6 @@ function MyToursPage() {
   const totalPages = Math.ceil(tours.length / itemsPerPage);
 
   if (isPending) return <div>درحال بارگذاری...</div>;
-  // console.log("UserToursData:", data, isPending, isError);
   return (
     <div className="flex flex-col mt-10 w-[872px] h-[569px] rounded-[10px] border border-[#00000033]">
       <div className="m-auto mt-4 ">

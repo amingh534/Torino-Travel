@@ -7,7 +7,6 @@ import { emailFormSchema } from "src/components/core/schema";
 import { useUpdateData } from "src/components/core/services/mutation";
 
 function EmailForm({ data }) {
-    console.log("Email",data);
   const { mutate, isPending } = useUpdateData();
 
   const [showEmail, setShowEmail] = useState(false);
@@ -30,7 +29,6 @@ function EmailForm({ data }) {
       {
         onSuccess: ({ data }) => {
             toast.success(data?.message);
-            console.log("onSuccess",data);
           setShowEmail(false);
         },
         onError: ({ response }) => {

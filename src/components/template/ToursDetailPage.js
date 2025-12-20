@@ -35,8 +35,10 @@ function ToursDetailPage({
         <div className={styles.innercard}>
           <img src={image} />
           <div className={styles.carddetail}>
-            <h1>{title}</h1>
-            <p>5روز و 4 شب</p>
+            <div className={styles.titleRow}>
+              <h1>{title}</h1>
+              <p>5روز و 4 شب</p>
+            </div>
             <div className={styles.groupdetail}>
               <div>
                 <Usertrick />

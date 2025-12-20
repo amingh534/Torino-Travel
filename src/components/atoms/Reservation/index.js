@@ -18,19 +18,19 @@ function ReservationButton({ id }) {
     if (isPending) return;
     mutate(id, {
       onSuccess: (data) => {
-        if(data?.data?.id === id) return <p>این تور قبلا خریداری شده است</p>
+        if (data?.data?.id === id) return <p>این تور قبلا خریداری شده است</p>;
         toast.success(data?.data.message);
         router.push("/checkout");
       },
       onError: (error) => {
-        toast.error("لطفاواردحساب کاربری خود شوید.")
+        toast.error("لطفاواردحساب کاربری خود شوید.");
         setIsModalOpen(true);
       },
     });
   };
 
   return (
-    <div>
+    <div >
       {isModalOpen ? (
         step === 1 ? (
           <SendOTPFrom
@@ -50,12 +50,25 @@ function ReservationButton({ id }) {
         )
       ) : (
         <button
-        
-          onClick={clickHandler}
-          className="absolute  w-[204px] h-[56px] border-none bg-[#28a745] font-light text-2xl text-[#ffff] rounded-[10px] "
-        >
-          رزرو و خرید
-        </button>
+  onClick={clickHandler}
+  disabled={isPending}
+  className="
+   w-[204px]
+    h-[56px]
+    bg-[#28a745]
+    font-light
+    text-2xl
+    text-white
+    rounded-[10px]
+    transition-colors
+    duration-200
+    hover:bg-[#23913c]
+   
+  "
+>
+  رزرو و خرید
+</button>
+
       )}
     </div>
   );

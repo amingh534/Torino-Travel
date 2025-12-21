@@ -1,4 +1,3 @@
-import toFarsiNumber from "../core/utils/digitConverter";
 import StateAirline from "@/public/icons/StateAirline";
 import PassengerRights from "@/public/icons/PassengerRights";
 import Ecunion from "@/public/icons/Ecunion";
@@ -32,7 +31,7 @@ function Footer() {
         </div>
         <div className={styles.leftfooter}>
           <div className={styles.footerlogo} style={{ direction: "ltr" }}>
-            <img src="images/Torino.webp"   />
+            <img src="/public/images/Torino.webp"   />
             <p>021-8574 :تلفن پشتیبانی </p>
           </div>
           <div className={styles.icon}>

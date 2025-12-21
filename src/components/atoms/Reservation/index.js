@@ -53,6 +53,7 @@ function ReservationButton({ id }) {
   onClick={clickHandler}
   disabled={isPending}
   className="
+
    w-[204px]
     h-[56px]
     bg-[#28a745]
@@ -63,7 +64,6 @@ function ReservationButton({ id }) {
     transition-colors
     duration-200
     hover:bg-[#23913c]
-   
   "
 >
   رزرو و خرید

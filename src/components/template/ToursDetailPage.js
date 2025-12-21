@@ -56,7 +56,7 @@ function ToursDetailPage({
             <div className={styles.buy}>
               <span>{e2p(sp(price))} </span>
               {/* <Link href="/buy-tours/checkout">رزرو و خرید</Link> */}
-              <ReservationButton id={id} />
+              <ReservationButton id={id} className={"ml-auto"} />
             </div>
           </div>
         </div>

@@ -21,6 +21,7 @@
 }
 .innercard {
   display: flex;
+  
   gap: 14px;
 }
 .carddetail {
@@ -28,6 +29,7 @@
   flex-direction: column;
   justify-content: center;
   margin-right: 24px;
+  width: 90%;
 }
 .titleRow {
   display: flex;
@@ -52,25 +54,26 @@
 
 .groupdetail {
   display: flex;
-  gap: 32px; /* فاصله یکنواخت */
+  flex-direction: row;
+  gap: 32px; 
   margin-top: 24px;
-  flex-wrap: wrap; /* برای ریسپانسیو */
+  flex-wrap: wrap; 
 }
 
 .groupdetail div {
   display: flex;
-  align-items: center; /* آیکن و متن وسط */
+  align-items: center;
   gap: 8px;
   font-weight: 400;
   font-size: 18px;
   color: #7d7d7d;
-  white-space: nowrap; /* نره خط بعد */
+  white-space: nowrap; 
 }
 .buy {
   display: flex;
+  flex-direction: row;
   /* margin-top: 32px; */
-  justify-content: space-around;
-
+  justify-content: space-between;
   text-align: center;
   align-items: center;
 }

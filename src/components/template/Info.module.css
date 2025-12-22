@@ -70,9 +70,9 @@
 }
 @media (max-width: 1200px) {
   .container {
-    display: flex; /* برای کنترل بهتر محتوا */
+    display: flex; 
     flex-direction: row;
-    align-items: center; /* وسط‌چینی افقی عناصر داخلی */
+    align-items: center;
     justify-content: center;
     margin: 60px auto 80px auto;
     width: fit-content;
@@ -109,9 +109,9 @@
 }
 @media (max-width: 1000px) {
   .container {
-    display: flex; /* برای کنترل بهتر محتوا */
+    display: flex; 
     flex-direction: row;
-    align-items: center; /* وسط‌چینی افقی عناصر داخلی */
+    align-items: center; 
     justify-content: center;
     margin: 60px auto 80px auto;
     width: fit-content;
@@ -172,15 +172,15 @@
 
 @media (max-width: 600px) {
   .container {
-    display: flex; /* برای کنترل بهتر محتوا */
+    display: flex;
     flex-direction: column;
-    align-items: center; /* وسط‌چینی افقی عناصر داخلی */
+    align-items: center; 
     justify-content: center;
     width: 327px;
     height: auto;
     margin: 52px auto 122px auto;
     border: 1px solid #00000040;
-    border-radius: 15px;
+    border-radius: 12px;
     box-sizing: border-box;
   }
   .text {

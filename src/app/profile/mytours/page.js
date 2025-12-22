@@ -8,7 +8,7 @@ import DateConverter from "@/utils/dateConverter";
 import { e2p, sp } from "@/utils/replaceNumbers";
 
 function MyToursPage() {
-  const { data, isPending, isError } = useGetUserTourss();
+  const { data, isPending, isError } = useGetUserTours();
   const tours = data?.data || [];
   const [currentPage, setCurrentPage] = useState(1);
 

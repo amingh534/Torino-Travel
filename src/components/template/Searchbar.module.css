@@ -71,9 +71,15 @@
   border-radius: 12px;
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
 }
-@media (max-width: 900px) {
+@media (max-width: 1024px) {
+  .fieldGroup:nth-child(n + 2) {
+    margin-right: 60px;
+  }
+  .iconLabel {
+    margin-left: 60px;
+  }
 }
-@media (max-width: 600px) {
+@media (max-width: 768px) {
   .container h2 {
     font-size: 18px;
     font-weight: 600;
@@ -103,6 +109,7 @@
     margin: 0 90px;
   }
   .selectoption button {
+    margin-top: 10px;
     width: 328px;
     height: 47px;
     border-radius: 16px;

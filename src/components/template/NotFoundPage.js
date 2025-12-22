@@ -6,7 +6,7 @@ function NotFoundPage() {
   return (
     <div className={styles.container}>
       <div className={styles.left}>
-        <Image src="/images/Error TV.png" width={455} height={455} />
+        <Image src="/public/images/error-tv.webp" width={455} height={455} />
       </div>
       <div className={styles.right}>
         <h2>صفحه مورد نظر یافت نشد</h2>

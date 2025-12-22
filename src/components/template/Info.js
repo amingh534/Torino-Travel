@@ -1,5 +1,6 @@
 import Call from "@/public/icons/Call";
 import styles from "./Info.module.css";
+import Image from "next/image";
 function Info() {
   return (
     <div className={styles.container}>
@@ -8,7 +9,7 @@ function Info() {
           <h2>خرید تلفنی از </h2>
           <p>به هرکجا که میخواهید!</p>
         </div>
-          <img src="images/professional-cartoon-man-talking-phone-icon-illustration_1151483-70336-removebg-preview 1.png" />
+          <Image loading="eager" src="/images/cartoon-man.webp" alt="info-phone" width={150} height={150}/>
       </div>
       <div className={styles.info}>
         <div>

@@ -1,7 +1,7 @@
 .container {
   display: flex;
   justify-content: center;
-  height: 251px;
+  /* height: 251px; */
   border-radius: 10px;
   border: 1px solid #00000040;
   margin: 109px 126px;
@@ -20,6 +20,8 @@
   padding: 10px;
 }
 .text img {
+  width: 308px;
+  height: 225px;
   margin-top: auto;
 }
 
@@ -66,38 +68,25 @@
   font-size: 16px;
   font-weight: 500;
 }
-@media (max-width: 1024px) {
-  .container {
-    margin: 80px 60px;
-  }
-  
-  .text h2 {
-    font-size: 36px;
-  }
-  .text p {
-    font-size: 24px;
-    width: 220px;
-  }
-  
-  .info div {
-    font-size: 24px;
-  }
-}
-@media (max-width: 768px) {
+@media (max-width: 1200px) {
   .container {
     display: flex; /* برای کنترل بهتر محتوا */
-    flex-direction: column;
+    flex-direction: row;
     align-items: center; /* وسط‌چینی افقی عناصر داخلی */
     justify-content: center;
+    margin: 60px auto 80px auto;
     width: fit-content;
     height: auto;
-    /* margin: 52px auto 122px auto; */
     border: 1px solid #00000040;
-    border-radius: 10px;
+    border-radius: 15px;
     box-sizing: border-box;
   }
+
   .text div {
     white-space: nowrap;
+    font-size: 40px;
+    margin: 30px;
+    padding: 10px;
   }
   .text h2 {
     font-size: 28px;
@@ -106,23 +95,81 @@
     font-size: 20px;
     width: 180px;
   }
-   .text img {
-    width: auto;
-    height: auto;
+  .text img {
+    
     object-fit: cover;
-    position: relative;
-    left: 25%;
-    bottom: 0px;
   }
-  
+
   .info div {
     display: flex;
     flex-direction: row;
     white-space: nowrap;
-
     font-size: 20px;
   }
 }
+@media (max-width: 1000px) {
+  .container {
+    display: flex; /* برای کنترل بهتر محتوا */
+    flex-direction: row;
+    align-items: center; /* وسط‌چینی افقی عناصر داخلی */
+    justify-content: center;
+    margin: 60px auto 80px auto;
+    width: fit-content;
+    height: auto;
+    border: 1px solid #00000040;
+    border-radius: 15px;
+    box-sizing: border-box;
+  }
+
+  .text div {
+    white-space: nowrap;
+    font-size: 40px;
+  
+  }
+  .text h2 {
+    font-size: 28px;
+  }
+  .text p {
+    font-size: 20px;
+    width: 180px;
+  }
+  .text img {
+    width: auto;
+    height: auto;
+    object-fit: cover;
+  }
+
+  .info div {
+    display: flex;
+    flex-direction: row;
+    white-space: nowrap;
+    font-size: 20px;
+  }
+}
+@media (max-width: 768px) {
+  .text {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .text img {
+    max-width: 200px;
+    margin-top: 16px;
+  }
+
+  .info {
+    flex-direction: column;
+    gap: 16px;
+    margin-top: auto;
+  }
+
+  .info button {
+    width: 140px;
+    height: 38px;
+  }
+}
+
 @media (max-width: 600px) {
   .container {
     display: flex; /* برای کنترل بهتر محتوا */
@@ -133,7 +180,7 @@
     height: auto;
     margin: 52px auto 122px auto;
     border: 1px solid #00000040;
-    border-radius: 10px;
+    border-radius: 15px;
     box-sizing: border-box;
   }
   .text {
@@ -157,8 +204,8 @@
     height: 158px;
     object-fit: cover;
     position: relative;
-    left: 35%;
-    bottom: 30px;
+    left: 30%;
+    bottom: 23px;
   }
 
   .text h2 {
@@ -177,7 +224,7 @@
     flex-direction: row;
     gap: 20px;
   }
-  
+
   .info button {
     width: 136px;
     height: 38px;

@@ -171,10 +171,7 @@
 @media (max-width: 600px) {
   .container {
     flex-direction: column;
-    align-items: center; 
     justify-content: center;
-    width: 327px;
-    height: auto;
     margin: 52px auto 122px auto;
     border: 1px solid #00000040;
     border-radius: 15px;
@@ -186,8 +183,6 @@
     width: 100%;
     height: 128px;
     max-width: 327px;
-    margin: 0 auto;
-    text-align: center;
   }
   .text div {
     gap: 12px;
@@ -199,7 +194,7 @@
     object-fit: cover;
     position: relative;
     left: 30%;
-    bottom: 23px;
+    bottom: 18px;
   }
 
   .text h2 {

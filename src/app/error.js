@@ -13,7 +13,7 @@ function Error({reset}) {
           <p>.لطفا بعدا دوباره امتحان کنید</p>
         </div>
       </div>
-      <button onClick={() => reset()}>تلاش مجدد</button>
+      <button onClick={() => reset()}>بازگشت به صفحه اصلی</button>
     </div>
   );
 }

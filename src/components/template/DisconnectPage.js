@@ -1,25 +1,19 @@
-"use client"
-import Image from "next/image"
-import styles from "./DisconnectPage.module.css"
+"use client";
+import Image from "next/image";
+import styles from "./DisconnectPage.module.css";
 
-function DisconnectPage(props) {
-  console.log(props);
-  const { onRetry } = props;
-
+function DisconnectPage({ reset }) {
   return (
     <div className={styles.container}>
       <div className={styles.left}>
-        <Image src="/images/Error Lamp Robot.png" width={555} height={555} />
+        <Image src="/images/error_lamp_robot.png.png" width={555} height={555} alt="Error Lamp Robot" />
       </div>
       <div className={styles.right}>
-        <h2>!اتصال با سرور برقرار نیست</h2>
-        <div >
-          <p>.لطفا بعدا دوباره امتحان کنید</p>
-        </div>
+        <h2>اتصال با سرور برقرار نیست!</h2>
+        <button onClick={() => reset()}>لطفا بعدا دوباره امتحان کنید.</button>
       </div>
-      <button>تلاش مجدد</button>
     </div>
-  )
+  );
 }
 
-export default DisconnectPage
+export default DisconnectPage;

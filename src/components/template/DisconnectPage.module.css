@@ -1,5 +1,6 @@
 .container {
     display: flex;
+    flex-direction: row;
     justify-content: center;
     align-items: center;
     margin-top: 100px;
@@ -11,16 +12,59 @@
     text-align: center;
     font-size: 36px;
     font-weight: 600;
+    gap: 30px;
     
 }
 .left {
     margin-right: 70px;
+    width: auto;
+    height: auto;
 }
 
-.right div {
-    margin-top: 10px;
-    font-size: 24px;
-    font-weight: 600;
-    padding: 20px;
-    color: #282828;
+.right button {
+    background-color: #28A745;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 18px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+@media (max-width: 1024px) {
+    .container {
+        flex-direction: column;
+        margin-top: 50px;
+    }
+    .left {
+        margin-right: 0;
+        margin-bottom: 30px;
+    }
+    .left img {
+        width: 400px;
+        height: 400px;
+    }
+    .right {
+        font-size: 32px;
+        margin-bottom: 150px;
+    }
+    
+}
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+        margin-top: 10px;
+    }
+    .left {
+        margin-right: 0;
+    }
+    .left img {
+        width: 300px;
+        height: 300px;
+    }
+    .right {
+        font-size: 28px;
+        margin-bottom: 200px;
+    }
+    
 }

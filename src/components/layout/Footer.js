@@ -4,7 +4,7 @@ import Ecunion from "@/public/icons/Ecunion";
 import Samandehi from "@/public/icons/Samandehi";
 import Aira from "@/public/icons/Aira";
 import styles from "./Footer.module.css"
-import Logo from "@/public/icons/Logo";
+import Image from "next/image";
 function Footer() {
   return (
     <>
@@ -31,7 +31,12 @@ function Footer() {
         </div>
         <div className={styles.leftfooter}>
           <div className={styles.footerlogo} style={{ direction: "ltr" }}>
-            <img src="/public/images/Torino.webp"   />
+            <Image
+  src="/images/Torino.webp"
+  alt="Torino"
+  width={100}
+  height={20}
+/>
             <p>021-8574 :تلفن پشتیبانی </p>
           </div>
           <div className={styles.icon}>

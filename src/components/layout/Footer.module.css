@@ -3,6 +3,7 @@
   justify-content: space-between;
   border-top: 1px solid #00000033;
   margin: 0 126px;
+  position: relative;
 }
 
 .leftfooter {
@@ -68,24 +69,10 @@
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    border-top: none;
+   border-top: 1px solid #00000033;
     white-space: nowrap;
   }
-  .footer::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 85%;
-    border-top: 1px dashed #00000033;
-    border-image: repeating-linear-gradient(
-        to right,
-        #00000033 0 12px,
-        transparent 12px 20px
-      )
-      1;
-  }
+  
 
   .rightfooter {
     display: flex;
@@ -96,19 +83,16 @@
   }
   .leftfooter {
     display: flex;
-    flex-direction: row-reverse;
+    flex-direction: column;
     justify-content: space-between;
     align-items: center;
-    width: 100%;
-    max-width: 390px;
-    margin: 0 auto;
+    /* width: 100%; */
+    margin: 0 30px;
     padding: 0 16px;
   }
 
   .icon {
-    display: grid;
-    grid-template-columns: repeat(3, 38px); /* سه آیکن در ردیف اول */
-    grid-template-rows: repeat(2, 36px); /* دو ردیف */
+    display: flex;
     justify-content: center;
     align-content: center;
   }
@@ -117,7 +101,7 @@
     height: 52px;
   }
   .footerlogo {
-    font-size: 14px;
+    font-size: 16px;
     color: #000000;
   }
 }
@@ -125,9 +109,9 @@
   .footer {
     display: flex;
     flex-direction: row;
-  }
-  
+  border-top: 1px solid #00000033;
 
+  }
   .rightfooter {
     display: flex;
     justify-items: center;
@@ -147,8 +131,8 @@
 
   .icon {
     display: grid;
-    grid-template-columns: repeat(3, 40px); /* سه آیکن در ردیف اول */
-    grid-template-rows: repeat(2, 36px); /* دو ردیف */
+    grid-template-columns: repeat(3, 40px); 
+    grid-template-rows: repeat(2, 36px); 
   }
   .icon svg {
     width: auto;
@@ -159,6 +143,19 @@
     font-size: 16px;
     color: #000000;
   }
+  .footer::before {
+    content: "";
+    display: block;
+    width: 85%;
+    height: 1px;
+    margin: 0 auto 16px auto;
+    background: repeating-linear-gradient(
+      to right,
+      #00000033 0 12px,
+      transparent 12px 20px
+    );
+  }
+
 }
 @media (max-width: 600px) {
   .footer {
@@ -169,23 +166,9 @@
     width: 100%;
     max-width: 390px;
     margin: 0 auto;
-    border-top: none;
+    border-top:none ;
   }
-  .footer::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 85%;
-    border-top: 1px dashed #00000033;
-    border-image: repeating-linear-gradient(
-        to right,
-        #00000033 0 12px,
-        transparent 12px 20px
-      )
-      1;
-  }
+ 
 
   .rightfooter {
     display: flex;

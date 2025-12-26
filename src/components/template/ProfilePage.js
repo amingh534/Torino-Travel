@@ -10,8 +10,9 @@ function ProfilePage({ children }) {
       max-lg:flex-col
       max-md:flex
   max-md:flex-col 
+  max-md:mt-0
   max-w-[1440px] 
-  mx-auto "
+  mx-auto  "
     >
       <ul
         className="flex flex-col mt-10 justify-evenly
@@ -34,7 +35,6 @@ function ProfilePage({ children }) {
   max-md:rounded-none
   max-md:divide-none
   max-md:border-none
- 
   "
       >
         <li
@@ -43,9 +43,8 @@ inline-flex items-center p-2
 md:hover:bg-[#28A74540]
 md:hover:text-[#28A745]
 md:hover:rounded-t-[9px]
-
-
 max-md:hover:text-[#28A745]
+
 "
         >
           <Profile />

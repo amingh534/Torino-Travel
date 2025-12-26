@@ -55,7 +55,11 @@ function BankAccountForm({ data }) {
   };
 
   return (
-    <div className="grid border border-[#00000033] rounded-[10px] w-[872px] h-[179px] ">
+    <div className="grid border border-[#00000033] rounded-[10px] w-[872px] h-[179px] max-md:h-[205px] ax-md:flex
+  max-md:flex-col 
+  max-md:mt-0
+  max-md:max-w-[90%]
+  mx-auto ">
       <div className="flex justify-between w-full">
         <h1 className="mr-3 mt-3 font-normal text-base text-[#000000]">
           اطلاعات حساب بانکی

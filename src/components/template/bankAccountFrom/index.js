@@ -7,7 +7,6 @@ import { bankAccountSchema } from "src/components/core/schema";
 import { useUpdateData } from "src/components/core/services/mutation";
 
 function BankAccountForm({ data }) {
-  
   const [showTransactions, setShowTransactions] = useState(false);
   const { mutate, isPending } = useUpdateData();
 
@@ -33,7 +32,7 @@ function BankAccountForm({ data }) {
         debitCard_code: data.payment.debitCard_code,
       });
     }
-  }, [data,reset]);
+  }, [data, reset]);
 
   const submitHandler = (data) => {
     if (isPending) return;
@@ -55,11 +54,13 @@ function BankAccountForm({ data }) {
   };
 
   return (
-    <div className="grid border border-[#00000033] rounded-[10px] w-[872px] h-[179px] max-md:h-[205px] ax-md:flex
+    <div
+      className="grid border border-[#00000033] rounded-[10px] w-[872px] h-[179px] max-md:h-[294px] ax-md:flex
   max-md:flex-col 
   max-md:mt-0
   max-md:max-w-[90%]
-  mx-auto ">
+  mx-auto "
+    >
       <div className="flex justify-between w-full">
         <h1 className="mr-3 mt-3 font-normal text-base text-[#000000]">
           اطلاعات حساب بانکی
@@ -67,8 +68,11 @@ function BankAccountForm({ data }) {
       </div>
       {showTransactions ? (
         <div>
-          <form onSubmit={handleSubmit(submitHandler)}>
-            <div className="flex flex-wrap mr-6 gap-6 mb-8 *:p-3  *:w-[255px] *:h-[45px] *:border *:border-[#00000033] *:rounded-[5px] *:outline-none">
+          <form
+            onSubmit={handleSubmit(submitHandler)}
+            className="max-md:flex max-md:flex-col max-md:items-center"
+          >
+            <div className="flex flex-wrap mr-6 gap-6 mb-8 *:p-3  *:w-[255px] *:h-[45px] *:border *:border-[#00000033] *:rounded-[5px] *:outline-none max-md:justify-center max-md:gap-3  max-md:mr-0">
               <input
                 placeholder={
                   errors.shaba_code ? errors.shaba_code.message : "شماره شبا"
@@ -112,7 +116,7 @@ function BankAccountForm({ data }) {
                 aria-invalid={errors.debitCard_code ? "true" : "false"}
               />
             </div>
-            <div className="flex justify-end relative font-semibold text-base space-x-5  gap-5 border-t-[1px] border-t-[#00000033] *:mt-2  *:w-[144px] *:h-[41px] *:rounded-md ">
+            <div className="flex justify-end relative font-semibold text-base space-x-5  gap-5 border-t-[1px] border-t-[#00000033] *:mt-2  *:w-[144px] *:h-[41px] *:rounded-md max-md:border-none max-md:justify-center max-md:gap-3 max-md:w-full max-md:mr-5">
               <button type="submit" className="bg-[#28A745] text-[#FFFF] ">
                 تایید
               </button>
@@ -130,13 +134,13 @@ function BankAccountForm({ data }) {
           <div className="relative">
             <button
               onClick={() => setShowTransactions(true)}
-              className="absolute left-6 bottom-7 flex flex-row gap-3  font-extralight text-base text-[#009ECA]"
+              className="absolute left-6 bottom-7 flex flex-row gap-3  font-extralight text-base text-[#009ECA] max-md:bottom-14"
             >
               <Edit />
               ویرایش اطلاعات
             </button>
           </div>
-          <div className="m-3 flex font-light">
+          <div className="m-3 flex font-light max-md:flex max-md:justify-between max-md:gap-6 max-md:flex-col max-md:items-center">
             <div>
               <p className="font-light">
                 شماره شبا
@@ -147,7 +151,7 @@ function BankAccountForm({ data }) {
                 {data?.payment?.accountIdentifier}
               </p>
             </div>
-            <div className="mx-auto">
+            <div className="mx-auto max-md:mx-0">
               <p className="font-light">
                 شماره کارت
                 {data?.payment?.debitCard_code}

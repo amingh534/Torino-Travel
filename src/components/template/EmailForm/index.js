@@ -53,7 +53,7 @@ function EmailForm({ data }) {
        max-md:mt-3
     "
   >
-    <p className="text-sm font-light text-black">
+    <p className="text-sm mr-4 font-light text-black">
       شماره موبایل
     </p>
 

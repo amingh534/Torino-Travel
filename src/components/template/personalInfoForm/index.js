@@ -62,9 +62,9 @@ function PersonalInfoFrom({ data }) {
   return (
     <div>
       {showPersonalInfo ? (
-        <div>
-          <form onSubmit={handleSubmit(submitHandler)}>
-            <div className="flex flex-wrap mr-6 gap-6 mb-8 *:p-3  *:w-[255px] *:h-[45px] *:border *:border-[#00000033] *:rounded-[5px] *:outline-none">
+        
+          <form onSubmit={handleSubmit(submitHandler)} className="max-md:flex max-md:flex-col max-md:items-center"> 
+            <div className="flex flex-wrap mr-6 gap-6 mb-8 *:p-3  *:w-[255px] *:h-[45px] *:border *:border-[#00000033] *:rounded-[5px] *:outline-none max-md:justify-center max-md:gap-3  max-md:mr-0">
               <input
                 placeholder={
                   errors.fullName
@@ -134,7 +134,7 @@ function PersonalInfoFrom({ data }) {
                 <option value="female">زن</option>
               </select>
             </div>
-            <div className="flex justify-end relative font-normal text-base bottom-1 space-x-5  gap-5 border-t-[1px] border-t-[#00000033] *:mt-2  *:w-[144px] *:h-[41px] *:rounded-md ">
+            <div className="flex justify-end relative font-normal text-base bottom-1 space-x-5  gap-5 border-t-[1px] border-t-[#00000033] *:mt-2  *:w-[144px] *:h-[41px] *:rounded-md max-md:border-none max-md:justify-center max-md:gap-3 max-md:w-full max-md:mr-5">
               <button type="submit" className="bg-[#28A745] text-[#FFFF] ">
                 تایید
               </button>
@@ -146,10 +146,10 @@ function PersonalInfoFrom({ data }) {
               </button>
             </div>
           </form>
-        </div>
+        
       ) : (
         <div>
-          <div className="relative">
+          <div className="relative max-md:flex max-md:flex-col max-md:items-center max-md:gap-4">
             <button
               onClick={() => setShowPersonalInfo(true)}
               className="absolute left-6 bottom-14 flex flex-row gap-3  font-extralight text-base text-[#009ECA]"
@@ -158,7 +158,7 @@ function PersonalInfoFrom({ data }) {
               ویرایش اطلاعات
             </button>
           </div>
-          <div className="m-3 flex ">
+          <div className="m-3 flex max-md:flex max-md:flex-col max-md:items-center max-md:gap-6 justify-around max-md:w-full max-md:p-4 ">
             <div className="*:font-light">
               <p>
                 نام و نام خانوادگی

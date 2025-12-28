@@ -24,67 +24,113 @@ function EmailForm({ data }) {
   const submitHandler = (formData) => {
     if (isPending) return;
     // console.log("fromData:",formData);
-    mutate(
-       formData ,
-      {
-        onSuccess: ({ data }) => {
-            toast.success(data?.message);
-          setShowEmail(false);
-        },
-        onError: ({ response }) => {
-          toast.error(
-            response?.data?.message || "دوباره وارد حساب کاربری شوید"
-          );
-        },
-      }
-    );
+    mutate(formData, {
+      onSuccess: ({ data }) => {
+        toast.success(data?.message);
+        setShowEmail(false);
+      },
+      onError: ({ response }) => {
+        toast.error(response?.data?.message || "دوباره وارد حساب کاربری شوید");
+      },
+    });
   };
   return (
-    <div className="flex flex-row justify-between items-center w-full">
-      <div className="flex items-center">
-        <p className=" font-light text-sm p-5 text-[#000000]">
-          شماره موبایل
-          <span className="font-normal text-sm text-[#000000] mr-8">
-            {data?.mobile}
-          </span>
-        </p>
-      </div>
-      {showEmail ? (
-        <div>
-          <form onSubmit={handleSubmit(submitHandler)}>
-            <input
-              placeholder={errors.email ? errors.email.message : "آدرس ایمیل"}
-              className={`ml-2 p-2 w-[255px] h-[45px] rounded-md text-[#00000080] border border-[#00000033] outline-none ${
-                errors.email
-                  ? "text-red-600 placeholder-red-600  focus:border-red-600 "
-                  : ""
-              }`}
-              {...register("email")}
-              aria-invalid={errors.email ? "true" : "false"}
-            />
+ <div
+  className="
+    flex items-center justify-between
+    w-[95%]
+    max-md:flex-col
+    max-md:gap-6
+    max-md:m-auto
+  "
+>
+  {/* Mobile */}
+  <div
+    className="
+      flex items-center
+      w-full
+      max-md:justify-around
+       max-md:mt-3
+    "
+  >
+    <p className="text-sm font-light text-black">
+      شماره موبایل
+    </p>
 
-            <button
-              className="ml-[26px] mb-[21px] bg-[#28A745] w-[122px] h-[45px] rounded-[5px] font-light text-base text-[#FFFF] text-center"
-              type="submit"
-            >
-              تایید
-            </button>
-          </form>
-        </div>
-      ) : (
-        <div className="flex items-center gap-2  ml-10">
-          <p className="font-light text-sm text-[#000000] ">ایمیل</p>
-          <span className="ml-40 font-light text-sm">{data?.email}</span>
-          <button
-            onClick={() => setShowEmail(true)}
-            className="flex items-center gap-2 font-normal text-[#009ECA] text-sm"
-          >
-            <Edit />
-            افزودن
-          </button>
-        </div>
-      )}
+    <span className="text-sm font-normal text-black">
+      {data?.mobile}
+    </span>
+  </div>
+
+  {showEmail ? (
+    <form
+      onSubmit={handleSubmit(submitHandler)}
+      className="flex items-center gap-4 max-md:w-full max-md:flex-row max-md:m-5 max-md:justify-center "
+    >
+      <input
+        placeholder={errors.email ? errors.email.message : "آدرس ایمیل"}
+        className={`
+          w-[255px] h-[45px]
+          max-md:max-w-[186px]
+          max-md:max-h-[40px]
+          p-5 rounded-md
+          border border-black/20
+          outline-none
+          text-sm text-black/70
+          ${
+            errors.email
+              ? "border-red-600 text-red-600 placeholder-red-600 focus:border-red-600"
+              : ""
+          }
+        `}
+        {...register("email")}
+        aria-invalid={errors.email ? "true" : "false"}
+      />
+
+      <button
+        type="submit"
+        className="
+          h-[45px] w-[122px]
+          max-md:max-w-[93px]
+          max-md:max-h-[40px]
+          rounded-md
+          bg-[#28A745]
+          text-white text-base font-light
+        "
+      >
+        تایید
+      </button>
+    </form>
+  ) : (
+    <div
+      className="
+        flex items-center gap-4
+        max-md:w-full
+        max-md:justify-evenly
+        max-md:m-5
+      "
+    >
+      <p className="text-sm font-light text-black">ایمیل</p>
+
+      <span className="text-sm font-light text-black/70 truncate">
+        {data?.email}
+      </span>
+
+      <button
+        onClick={() => setShowEmail(true)}
+        className="
+          flex items-center gap-2
+          text-sm font-normal
+          text-[#009ECA]
+        "
+      >
+        <Edit />
+        افزودن
+      </button>
     </div>
+  )}
+</div>
+
   );
 }
 

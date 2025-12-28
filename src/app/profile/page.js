@@ -56,21 +56,22 @@ function ProfilePage() {
 
   return (
     <div className="flex flex-col mt-10 gap-6">
-      <div className="grid border border-[#00000033] rounded-[10px] w-[872px] h-[115px]  max-md:h-[169px] ax-md:flex
+      <div className="grid border border-black/20 rounded-[10px] w-[872px] h-[115px]  max-md:h-auto max-md:flex
   max-md:flex-col 
   max-md:mt-0
-  max-md:max-w-[90%]
+  max-md:w-[90%]
   mx-auto ">
         <h1 className="p-3 font-normal text-base ">اطلاعات حساب کاربری</h1>
         <EmailForm data={user}/>
       </div>
-      <div className="grid border border-[#00000033] rounded-[10px] w-[872px] h-[240px] max-md:h-[251px] ax-md:flex
+      <div className="grid border border-black/20 rounded-[10px] w-[872px] h-[240px] max-md:h-[355px] 
+      
   max-md:flex-col 
   max-md:mt-0
-  max-md:max-w-[90%]
+  max-md:w-[90%]
   mx-auto ">
-        <div className="flex justify-between w-full">
-          <h1 className="mr-3 mt-3 font-normal text-base text-[#000000]">
+        <div className="flex justify-between w-full ">
+          <h1 className="mr-3 mt-3 font-normal text-base text-black">
             اطلاعات شخصی
           </h1>
         </div>

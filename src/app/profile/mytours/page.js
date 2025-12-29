@@ -202,7 +202,7 @@ function MyToursPage() {
       <button
         key={index}
         onClick={() => setCurrentPage(index + 1)}
-        className={`px-3 py-1 border rounded text-sm ${
+        className={`px-3 py-1 font-normal border rounded text-sm ${
           currentPage === index + 1
             ? "bg-green-500 text-white"
             : ""

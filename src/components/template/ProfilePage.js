@@ -75,8 +75,6 @@ md:hover:bg-[#28A74540]
 md:hover:text-[#28A745]
 md:hover:rounded-b-[9px]
 max-md:hover:text-[#28A745]
-
-
 "
         >
           <Transaction />

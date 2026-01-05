@@ -8,7 +8,6 @@ import Slider from "../components/template/Slider";
 
 async function Home() {
   const data = await serverFetch("tour");
-  // console.log("serverFetchData:",data);
   return (
     <>
       <Searchbar />

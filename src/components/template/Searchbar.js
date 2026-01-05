@@ -6,36 +6,58 @@ import Search from "@/public/icons/Search";
 import Location from "@/public/icons/Location";
 
 import { Controller, useForm } from "react-hook-form";
-import { useEffect, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 
 import { DatePicker } from "zaman";
 import { useGetTours } from "../core/services/queries";
 import { DateToIso, flattenObjected } from "../core/utils/helpers";
+import useQuery from "../core/hooks/query";
+import QueryString from "qs";
+import cities from "../core/data/cityData";
+import { useRouter, useSearchParams } from "next/navigation";
 
 function Searchbar() {
-  const [query, setQuery] = useState("");
-  const { data, isPending, refetch } = useGetTours(query);
-  const { register, handleSubmit, control } = useForm();
+   const router = useRouter();
+  const searchParams = useSearchParams();
   const [isOpen, setIsOpen] = useState(false);
-  //  console.log(data);
 
+  // 🔹 query از URL
+  const queryObject = {
+    originId: searchParams.get("originId") || "",
+    destinationId: searchParams.get("destinationId") || "",
+    startDate: searchParams.get("startDate"),
+    endDate: searchParams.get("endDate"),
+  };
+
+  // 🔹 گرفتن دیتا
+  const { data } = useGetTours(flattenObjected(queryObject));
+
+  const { register, handleSubmit, control, reset } = useForm({
+    defaultValues: {
+      originId: "",
+      destinationId: "",
+      date: null,
+    },
+  });
+
+  // 🔹 sync فرم با URL
   useEffect(() => {
-    refetch();
-  }, [query]);
+    reset({
+      originId: queryObject.originId,
+      destinationId: queryObject.destinationId,
+      date:
+        queryObject.startDate && queryObject.endDate
+          ? {
+              startDate: queryObject.startDate,
+              endDate: queryObject.endDate,
+            }
+          : null,
+    });
+  }, []);
 
   const submitHandler = (form) => {
-    // let queryString = "";
-    // console.log();
-    // if (form?.originId) queryString += `originId=${form?.originId}&`;
-    // if (form?.destinationId)
-    //   queryString += `destinationId=${form?.destinationId}&`;
-    // if (form?.date)
-    //   queryString += `startDate=${new Date(
-    //     form?.date.startDate
-    //   ).toISOString()}&endDate=${new Date(form?.date.endDate).toISOString()}&`;
-    // console.log(queryString);
-    // console.log(form);
-    setQuery(flattenObjected(form));
+    const query = QueryString.stringify(flattenObjected(form));
+    router.push(`/?${query}`);
   };
 
   return (
@@ -49,21 +71,30 @@ function Searchbar() {
         <div className={styles.fieldGroup}>
           <Location />
           <select {...register("originId")}>
-            <option disabled selected>
+            <option value="default">
               مبدا
             </option>
-            <option value="2">سنندج</option>
+
+            {cities.map((city) => (
+              <option key={city.id} value={city.id}>
+                {city.name}
+              </option>
+            ))}
           </select>
         </div>
         {/* انتخاب مقصد */}
         <div className={styles.fieldGroup}>
           <hr />
           <Search />
-          <select {...register("destinationId")}>
-            <option disabled selected>
+          <select {...register("destinationId")} defaultValue="">
+            <option value="default">
               مقصد
             </option>
-            <option value="1">تهران</option>
+            {cities.map((city) => (
+              <option key={city.id} value={city.id}>
+                {city.name}
+              </option>
+            ))}
           </select>
         </div>
         {/* انتخاب تاریخ */}
@@ -71,11 +102,11 @@ function Searchbar() {
           <hr />
           <div
             className={styles.iconLabel}
-            onClick={() => setIsOpen(!isOpen)}
+            onClick={() => setIsOpen((prev) => !prev)}
             style={{ cursor: "pointer" }}
           >
             <Calendar />
-            <label htmlFor="date">تاریخ</label>
+            <label>تاریخ</label>
           </div>
           {isOpen && (
             <Controller
@@ -84,7 +115,6 @@ function Searchbar() {
               render={({ field: { onChange } }) => (
                 <div className={styles.datePickerWrapper}>
                   <DatePicker
-                 
                     accentColor="#28A745"
                     inputClass="w-[200px] "
                     weekends={[6]}
@@ -92,7 +122,7 @@ function Searchbar() {
                     onChange={(e) =>
                       onChange({
                         startDate: DateToIso(e.from),
-                        endDate: DateToIso(e.from),
+                        endDate: DateToIso(e.to),
                       })
                     }
                     defaultValue={new Date()}

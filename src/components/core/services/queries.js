@@ -19,7 +19,12 @@ const useGetTours = (query) => {
   const url = "tour?" + QueryString.stringify(query);
   const queryFn = () => api.get(url);
   const queryKey = ["tour", query];
-  return useQuery({ queryFn, queryKey, enabled: false });
+  return useQuery({
+    queryFn,
+    queryKey,
+    enabled: false,
+    keepPreviousData: true,
+  });
 };
 const useGetBasket = () => {
   const queryFn = () => api.get("basket");

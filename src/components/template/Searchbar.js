@@ -6,7 +6,7 @@ import Search from "@/public/icons/Search";
 import Location from "@/public/icons/Location";
 
 import { Controller, useForm } from "react-hook-form";
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useState } from "react";
 
 import { DatePicker } from "zaman";
 import { useGetTours } from "../core/services/queries";

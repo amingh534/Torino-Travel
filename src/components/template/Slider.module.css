@@ -1,161 +1,197 @@
 .container {
   display: flex;
   justify-content: space-between;
-  /* align-content: center; */
-  height: 676px;
-  padding-inline: 129px;
-  /* margin: 102px 129px auto 129px; */
   align-items: center;
+  padding-inline: 129px;
+  height: 676px;
+  box-sizing: border-box;
 }
+
+/* RIGHT */
 .right {
   display: flex;
   flex-direction: column;
 }
-/* .right div {
-  display: flex;
-  flex-direction: row;
-  align-items: baseline;
-  font-family: Vazirmatn;
-  font-weight: 800;
-  font-size: 40px;
-} */
+
 .right span {
-  margin: auto 0;
-  height: 40px;
   width: 40px;
+  height: 40px;
   border-radius: 50%;
-  display: inline-block;
-  color: #ffffff;
-  text-align: center;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   font-size: 30px;
   font-weight: 800;
+  color: #fff;
   background: linear-gradient(180deg, #28a745 0%, #10411b 100%);
 }
+.title {
+  display: flex;
+  align-items: center;
 
+}
 .right h2 {
   margin-right: 20px;
-  color: #282828;
-  font-family: Vazirmatn;
   font-size: 40px;
   font-weight: 800;
+  color: #282828;
 }
+
 .right i::before {
   content: "تورینو";
   color: #28a745;
   padding: 0 10px;
-  font-weight: 800;
 }
 
 .right h3 {
   font-size: 20px;
-  font-weight: 500;
-  text-align: right;
-  color: #282828;
   margin-top: 20px;
 }
 
 .right p {
-  width: 517px;
-  height: 264px;
-  color: #282828;
-  font-family: A Iranian Sans;
+  width: 520px;
+  margin-top: 20px;
   font-size: 20px;
-  font-weight: 400;
   line-height: 44px;
   text-align: justify;
-  margin-top: 20px;
 }
 
+/* LEFT / SLIDER */
 .left {
-  display: flex;
-  justify-content: center;
-  position: relative;
+  width: 320px;
+  overflow: hidden;
 }
+
 .imgcontainer {
   display: flex;
-  flex-direction: row;
-  margin: auto;
-  margin-bottom: 79px;
-  position: relative;
-}
-.slide1 img {
-  position: absolute;
-  margin-right: 50px;
-  z-index: 1;
-}
-.slide2 img {
-  position: relative;
-  right: 100px;
-  top: 30px;
-  z-index: 0;
-}
-.slide3 img {
-  position: absolute;
-  left: 80px;
-  bottom: 10px;
-  z-index: -1;
-}
-.slide4 img {
-  position: relative;
-  left: 37px;
-  bottom: -100px;
-  z-index: -3;
+  gap: 24px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
 }
 
+.imgcontainer::-webkit-scrollbar {
+  height: 8px;
+}
+.imgcontainer::-webkit-scrollbar-thumb {
+  background: #000;
+  border-radius: 10px;
+}
+
+.imgcontainer {
+  flex-shrink: 0;
+  width: 100%;
+  height: 100%;
+  scroll-snap-align: center;
+  border-radius: 20px;
+  overflow: hidden;
+}
+.swiper {
+font-weight: 400;
+ font-size: 18px;
+}
+.imgcontainer img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: cover;
+}
+
+.swiperSlide {
+  text-align: center;
+
+  /* Center slide text vertically */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.swiperSlide img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+@media (max-width: 1200px) {
+  .container {
+    flex-direction: column;
+    padding-inline: 80px;
+    height: auto;
+    gap: 40px;
+  }
+
+  .right p {
+    width: auto;
+    font-size: 18px;
+    line-height: 38px;
+  }
+
+  .left {
+    width: 300px;
+  }
+
+  .imgcontainer > div {
+     width: 100%;
+    height: 100%;
+  }
+}
+@media (max-width: 900px) {
+  .container {
+    flex-direction: column;
+    padding-inline: 50px;
+    gap: 30px;
+  }
+
+  .right h2 {
+    font-size: 30px;
+  }
+
+  .right h3 {
+    font-size: 18px;
+  }
+
+  .right p {
+    font-size: 16px;
+    line-height: 32px;
+  }
+
+  .left {
+    width: 260px;
+  }
+
+  .imgcontainer > div {
+    
+      width: 100%;
+    height: 100%;
+  }
+}
 @media (max-width: 600px) {
   .container {
-    display: flex;
     flex-direction: column;
     padding-inline: 25px;
-    height: 386px;
-    /* margin: 90px 31px 62px 25px; */
+    height: auto;
   }
-  .right div {
-    display: flex;
-    font-size: 24px;
-    margin-left:40px;
-  }
-  .right h3 {
-    display: none;
-  }
+
+  .right h3,
   .right p {
     display: none;
   }
 
+  .right h2 {
+    font-size: 24px;
+  }
+
   .left {
-    position: relative;
-    left: 0;
-    right: 0;
+    width: 230px;
   }
-  
-  .slide1 img {
-    position: absolute;
-    z-index: 1;
-    width: 255px;
-    height: 284px;
-    top: 16px;
-    left: 79px;
-    border-radius: 35px;
+
+  .imgcontainer {
+    gap: 16px;
+ 
   }
-  .slide2 img {
-    width: 253px;
-    height: 247px;
-    top: 35px;
-    left: 60px;
-    border-radius: 35px;
-  }
-  .slide3 img {
-    width: 168px;
-    height: 198px;
-    top: 69px;
-    left: 10px;
-    border-radius: 35px;
-  }
-  .slide4 img {
-    width: 142px;
-    height: 162px;
-    top: 97px;
-    left: -12px;
-    border-radius: 35px;
+
+  .imgcontainer > div {
+    width: 100%;
+    height: 100%;
+    border-radius: 16px;
   }
 }
